@@ -2,8 +2,10 @@
 layout: default
 ---
 {%- assign serien = site.serien | sort: "reihenfolge" -%}
-<h1 class="vh">{{ site.title }}, Schwarzweißfotografie</h1>
-<p class="intro">{{ site.einleitung }}</p>
+<header class="home-head">
+  <h1 class="home-title">{{ site.ueberschrift | default: "Analoge Fotografie" }}</h1>
+  <p class="intro">{{ site.einleitung }}</p>
+</header>
 <div class="wall covers">
 {%- for s in serien -%}
   {%- assign m = forloop.index0 | modulo: 2 -%}
