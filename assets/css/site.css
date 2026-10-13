@@ -19,8 +19,8 @@
   --sans:"Jost","Futura","Century Gothic","Avenir Next",system-ui,sans-serif;
   --serif:"Cormorant Garamond","Cormorant",Garamond,"Iowan Old Style",Georgia,serif;  /* Name und Überschriften */
   --side:clamp(16px,5vw,80px);
-  --gap:clamp(16px,2.6vw,40px);
-  --row-gap:clamp(40px,7vw,112px);
+  --gap:clamp(20px,4vw,64px);        /* Abstand zwischen Bildern einer Reihe */
+  --row-gap:clamp(64px,8.5vw,136px); /* Abstand zwischen den Reihen */
   --rowmax:72vh;
   --solo:76vh;
   color-scheme:light;
@@ -46,14 +46,13 @@ a{color:inherit}
 .bar.hide{transform:translateY(-100%)}
 .bar.hide:focus-within{transform:none}
 .head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:16px;padding-block:clamp(20px,2.8vw,40px)}
-.mark{font-family:var(--serif);font-weight:500;font-size:clamp(26px,2.6vw,36px);line-height:1;letter-spacing:.005em;text-decoration:none}
+.mark{font-family:var(--serif);font-weight:500;font-size:clamp(28px,3vw,42px);line-height:1;letter-spacing:.005em;text-decoration:none}
 .menu-btn{display:none;min-height:44px;font:350 16px var(--sans);letter-spacing:.03em;color:var(--ink);background:none;border:0;padding:4px 0;cursor:pointer}
 .nav{list-style:none;margin:0;padding:0;display:flex;gap:clamp(20px,3.2vw,52px)}
 .nav a{font-weight:350;font-size:16px;letter-spacing:.03em;color:var(--quiet);text-decoration:none;transition:color .2s}
 .nav a:hover,.nav a[aria-current]{color:var(--ink)}
-.has-sub{position:relative}
-.sub{list-style:none;margin:0;position:absolute;left:0;top:100%;z-index:20;display:grid;gap:10px;min-width:11rem;padding:16px 24px 18px 0;background:var(--wall);opacity:0;visibility:hidden;transform:translateY(-4px);transition:opacity .2s,transform .2s,visibility .2s}
-.has-sub:hover .sub,.has-sub:focus-within .sub{opacity:1;visibility:visible;transform:none}
+/* Die Serienliste steht am Desktop als eigene Zeile auf den Serienseiten (.s-nav), nur das Handymenü zeigt sie */
+.sub{display:none;list-style:none;margin:0}
 @media (max-width:760px){
   .head{align-items:center}
   .menu-btn{display:block}
@@ -61,7 +60,7 @@ a{color:inherit}
   .head.open #nav{display:block;height:calc(100vh - 76px);height:calc(100svh - 76px);overflow-y:auto}
   .nav{flex-direction:column;gap:4px;padding-block:16px 32px}
   .nav a{display:block;padding-block:6px;font-family:var(--serif);font-size:34px;font-weight:400;letter-spacing:0}
-  .sub{position:static;opacity:1;visibility:visible;transform:none;display:grid;gap:0;min-width:0;padding:0 0 12px 20px;background:none}
+  .sub{display:grid;gap:0;padding:0 0 12px 20px}
   .sub a{font-size:25px}
 }
 
@@ -101,7 +100,7 @@ html.js a.frame:hover img.loaded,html.js .cover-link:hover img.loaded{opacity:.9
 
 /* Handy: eine Spalte, Bilder randlos, Beschriftung mit Abstand zum Rand */
 @media (max-width:640px){
-  .wall,[data-hang] .wall--series{display:flex;flex-direction:column;gap:56px}
+  .wall,[data-hang] .wall--series{display:flex;flex-direction:column;gap:68px}
   .wall .row{display:contents}
   .wall .ph,[data-hang] .wall--series .ph{flex:none;width:100%}
   [data-hang="raster"] .wall--series .frame{aspect-ratio:var(--w) / var(--h)}
@@ -112,9 +111,14 @@ html.js a.frame:hover img.loaded,html.js .cover-link:hover img.loaded{opacity:.9
 }
 
 /* Serienkopf */
-.s-head{display:grid;gap:14px;max-width:46rem;margin-bottom:clamp(36px,5vw,72px)}
-.eyebrow{margin:0;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--quiet);font-variant-numeric:tabular-nums}
-.s-title,.p-title{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(44px,5.4vw,72px);line-height:1.02;text-wrap:balance}
+/* Seitentitel bewusst kleiner als der Name im Kopf */
+.s-head{display:grid;gap:14px;max-width:46rem;margin-bottom:clamp(44px,6vw,88px)}
+.s-title,.p-title{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(26px,2.4vw,34px);line-height:1.1;text-wrap:balance}
+/* Serienzeile: alle Serien, die aktuelle dunkel */
+.s-nav ul{list-style:none;margin:0 0 clamp(20px,3vw,40px);padding:0;display:flex;flex-wrap:wrap;gap:6px clamp(18px,2.4vw,36px)}
+.s-nav a{display:inline-block;padding-block:6px;font-weight:350;font-size:14px;letter-spacing:.04em;color:var(--quiet);text-decoration:none;transition:color .2s}
+.s-nav a:hover{color:var(--ink)}
+.s-nav a[aria-current]{color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px}
 .s-intro{font-weight:300;font-size:clamp(17px,1.5vw,19px);line-height:1.6;color:var(--ink-2)}
 .s-intro p{margin:0 0 .6em}
 .s-intro p:last-child{margin-bottom:0}
@@ -145,25 +149,31 @@ html.js a.frame:hover img.loaded,html.js .cover-link:hover img.loaded{opacity:.9
 }
 
 /* Artikel */
+/* Eine Spalte, 40rem. Bilder höchstens so breit wie der Text und gut halb so hoch wie der Bildschirm, damit der Text führt */
 .article{max-width:40rem}
 .back{display:inline-block;margin-bottom:28px;padding-block:6px;font-size:14px;color:var(--quiet);text-decoration:none}
 .back:hover{color:var(--ink)}
 .article .date{margin:14px 0 36px;font-size:13px;color:var(--quiet)}
 .article .body p,.article .body li{font-size:clamp(17px,1.3vw,18px);font-weight:380;line-height:1.75;color:var(--ink-2)}
 .article .body p{margin:0 0 1.2em}
-.article .body h2{margin:1.6em 0 .5em;font-family:var(--serif);font-weight:500;font-size:30px;line-height:1.15}
-.article .body figure{margin:44px 0;max-width:28rem}
+.article .body h2{margin:1.6em 0 .5em;font-family:var(--serif);font-weight:500;font-size:clamp(22px,1.9vw,26px);line-height:1.15}
+.article .body figure{margin:clamp(32px,4vw,48px) 0;width:min(100%, calc(52vh * var(--r,1)))}
+.article .body .paar{display:flex;gap:clamp(12px,1.6vw,20px);align-items:flex-start;margin:clamp(32px,4vw,48px) 0}
+.article .body .paar figure{flex:var(--r) 1 0;min-width:0;width:auto;margin:0}
+.article .body figcaption span{white-space:normal}
 
 /* Über mich */
 .about{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(24px,5vw,80px);align-items:start;padding-top:clamp(8px,3vw,48px)}
 .about figure{margin:0}
 .about figcaption{margin-top:10px;font-size:13px;letter-spacing:.02em;color:var(--quiet)}
 .about-text{max-width:36rem}
-.about h1{margin:0 0 20px;font-family:var(--serif);font-size:clamp(38px,3.6vw,48px);font-weight:400;line-height:1.05}
+.about h1{margin:0 0 20px;font-family:var(--serif);font-size:clamp(26px,2.4vw,34px);font-weight:400;line-height:1.1}
 .about-text p{margin:0 0 1em;font-size:17px;font-weight:380;line-height:1.75;color:var(--ink-2)}
 .contact{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 20px;margin:32px 0 0;padding-top:20px;border-top:1px solid var(--line);font-size:15px}
 .contact dt{color:var(--quiet)}
 .contact dd{margin:0;overflow-wrap:anywhere}
+.contact .more{display:table;margin-top:6px;padding-block:4px;color:var(--quiet);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+.contact .more:hover{color:var(--ink)}
 @media (max-width:760px){.about{grid-template-columns:1fr}}
 
 /* Fuß */

@@ -153,6 +153,11 @@ def main():
 
     if not eintraege:
         return
+    if slug(args.serie) == "journal":
+        print("\nIm Beitrag an der passenden Stelle einfügen, alt und text ergänzen:\n")
+        for e in eintraege:
+            print(f'{{% include beitragsbild.html serie="journal" datei="{e["datei"]}" w="{e["w"]}" h="{e["h"]}" alt="" text="" %}}')
+        return
     print("\nIn _serien/" + slug(args.serie) + ".md unter „bilder:“ einfügen und ergänzen:\n")
     for e in eintraege:
         print(f"  - datei: {e['datei']}")

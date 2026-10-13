@@ -56,7 +56,13 @@ layout: default
 {%- assign reihen = plan | split: "," -%}
 
 <header class="s-head">
-  <p class="eyebrow">Serie {{ pos | plus: 1 }} / {{ anzahl_serien }}</p>
+  <nav class="s-nav" aria-label="Serien">
+    <ul>
+      {%- for s in serien %}
+      <li><a href="{{ s.url | relative_url }}"{% if s.url == page.url %} aria-current="page"{% endif %}>{{ s.title }}</a></li>
+      {%- endfor %}
+    </ul>
+  </nav>
   <h1 class="s-title">{{ page.title }}</h1>
   <div class="s-intro">{{ content }}</div>
   <p class="s-meta">{{ n_bilder }} Bilder · {{ formate }}{% if page.zeitraum and page.zeitraum != "" %} · {{ page.zeitraum }}{% endif %}</p>

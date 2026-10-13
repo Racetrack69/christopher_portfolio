@@ -67,8 +67,27 @@ description: Ein Satz, worum es geht (erscheint in der Liste und bei Google).
 Text in Markdown …
 ```
 
+Bilder für Beiträge liegen in `assets/images/journal/`. Vorbereiten wie Serienbilder, nur mit
+`--serie journal`. Das Skript gibt dann die fertige Zeile für den Beitrag aus:
+
+```
+python3 tools/bilder.py ~/Export/kamera.jpg --serie journal --name rolleiflex-oben
+```
+
 Ein Bild im Text:
-`{% include beitragsbild.html serie="japan" datei="japan-01" w="2400" h="2400" alt="…" text="Bildunterschrift" %}`
+`{% include beitragsbild.html serie="journal" datei="rolleiflex-oben" w="1600" h="900" alt="…" text="Bildunterschrift" %}`
+
+Zwei Hochformate nebeneinander (auch am Handy):
+
+```
+<div class="paar">
+{% include beitragsbild.html serie="journal" datei="bild-a" w="900" h="1600" alt="…" text="…" %}
+{% include beitragsbild.html serie="journal" datei="bild-b" w="1066" h="1600" alt="…" text="…" %}
+</div>
+```
+
+Entwürfe kommen ohne Datum in `_drafts/` und erscheinen nicht auf der Seite. Zum Veröffentlichen
+nach `_posts/` verschieben und das Datum vorne an den Dateinamen setzen.
 
 ## Einstellungen in `_config.yml`
 

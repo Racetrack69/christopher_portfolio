@@ -1,9 +1,10 @@
 {%- comment -%}
-  Bild in einem Journal-Beitrag.
-  Aufruf: {% include beitragsbild.html serie="japan" datei="japan-01" w="1600" h="1600" alt="…" text="Bildunterschrift" %}
+  Bild in einem Journal-Beitrag. Parameter: serie (Ordner unter assets/images), datei, w, h, alt, text (Bildunterschrift, optional).
+  Zwei Bilder nebeneinander: beide Aufrufe in ein div mit class="paar" setzen (Beispiel im README).
 {%- endcomment -%}
 {%- assign base = '/assets/images/' | append: include.serie | append: '/' | append: include.datei -%}
-<figure class="ph">
+{%- assign r = include.w | times: 1.0 | divided_by: include.h | round: 4 -%}
+<figure class="ph" style="--r:{{ r }}">
   <span class="frame" style="--w:{{ include.w }};--h:{{ include.h }}">{% include img.html base=base w=include.w h=include.h alt=include.alt %}</span>
   {%- if include.text %}
   <figcaption><span>{{ include.text }}</span></figcaption>
