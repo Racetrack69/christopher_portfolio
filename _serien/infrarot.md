@@ -1,5 +1,6 @@
 ---
 title: Infrarot
+kurz: "Bäume im Feld auf Infrarotfilm"          # eine Zeile unter dem Titel auf der Startseite
 reihenfolge: 4
 description: "Infrarotfotografie auf Film von Christopher Schmidtke. Weiß leuchtendes Laub, fast schwarzer Himmel und Bäume im Feld als klare, abstrakte Flächen."
 zeitraum: "2017–2020"

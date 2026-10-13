@@ -66,6 +66,7 @@ a{color:inherit}
 
 /* Wand: Reihen gleicher Höhe, höchstens --rowmax hoch, zentriert */
 .lede{margin:0 0 clamp(28px,4vw,56px);max-width:40rem;font-weight:300;font-size:clamp(17px,1.5vw,19px);line-height:1.6;color:var(--ink-2)}
+.intro{margin:clamp(4px,1vw,12px) 0 clamp(48px,6vw,96px);max-width:34rem;font-family:var(--serif);font-weight:400;font-size:clamp(22px,2.1vw,28px);line-height:1.38;color:var(--ink-2);text-wrap:pretty;font-variant-numeric:lining-nums}
 .wall{display:flex;flex-direction:column;gap:var(--row-gap)}
 .wall .row{display:flex;gap:var(--gap);align-items:flex-start;margin-inline:auto;width:min(100%, calc(var(--sum) * var(--rowmax) + (var(--n) - 1) * var(--gap)))}
 .wall .ph{flex:var(--r) 1 0;min-width:0}
@@ -82,6 +83,9 @@ html.js a.frame:hover img.loaded,html.js .cover-link:hover img.loaded{opacity:.9
 .cover-link{display:block;text-decoration:none}
 .cover .c-title{font-family:var(--serif);font-size:24px;font-weight:500;line-height:1.1;color:var(--ink)}
 .cover-link:hover .c-title{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+.cover .c-sub{display:block;margin-top:4px;font-size:14px;line-height:1.5;color:var(--quiet)}
+.home-journal{max-width:46rem;margin-top:var(--row-gap)}
+.mini{margin:0 0 4px;font-family:var(--sans);font-size:12.5px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--quiet)}
 
 /* Einblenden: nur was beim Laden unterhalb des Bildschirms liegt, einmalig, kurz */
 .rv{opacity:0;transform:translateY(14px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0ms)}
@@ -98,19 +102,21 @@ html.js a.frame:hover img.loaded,html.js .cover-link:hover img.loaded{opacity:.9
 [data-hang="einzeln"] .wall--series .row{display:contents}
 [data-hang="einzeln"] .wall--series .ph{flex:none;width:min(100%, calc(var(--solo) * var(--r)))}
 
-/* Handy: eine Spalte, Bilder randlos, Beschriftung mit Abstand zum Rand */
+/* Handy: eine Spalte, Bilder mit schmalem Rand zur Wand, bündig mit dem Text */
 @media (max-width:640px){
   .wall,[data-hang] .wall--series{display:flex;flex-direction:column;gap:68px}
   .wall .row{display:contents}
   .wall .ph,[data-hang] .wall--series .ph{flex:none;width:100%}
   [data-hang="raster"] .wall--series .frame{aspect-ratio:var(--w) / var(--h)}
   [data-hang="raster"] .wall--series .frame img{inset:0;width:100%;height:100%;object-fit:cover}
-  .wall .frame,.about .frame{width:calc(100% + 2 * var(--side));max-width:none;margin-inline:calc(-1 * var(--side))}
   .cover .c-title{font-size:26px}
   .rv{transition-delay:0ms}
 }
 
 /* Serienkopf */
+/* Ziffern in der Serifenschrift auf Linie (Cormorant setzt sonst Mediävalziffern, 2010 sähe aus wie 2o1o) */
+.mark,.intro,.s-title,.p-title,.about h1,.article .body h2,.posts .pt,.pubs .mag,.cover .c-title{font-variant-numeric:lining-nums}
+
 /* Seitentitel bewusst kleiner als der Name im Kopf */
 .s-head{display:grid;gap:14px;max-width:46rem;margin-bottom:clamp(44px,6vw,88px)}
 .s-title,.p-title{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(26px,2.4vw,34px);line-height:1.1;text-wrap:balance}

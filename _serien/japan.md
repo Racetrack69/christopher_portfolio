@@ -1,5 +1,6 @@
 ---
 title: Japan
+kurz: "Tokio mit der Rolleiflex, 2022 und 2025"          # eine Zeile unter dem Titel auf der Startseite
 reihenfolge: 1
 description: "Schwarzweißfotografie auf Film von Christopher Schmidtke. Tokio mit der Rolleiflex, Hochhäuser in der Dämmerung, ein Shinkansen und Hochstraßen im Dunst."
 zeitraum: "2022 und 2025"

@@ -53,7 +53,9 @@ Höhe, die Breite ergibt sich aus dem Format. Beschnitten wird nichts.
 ## Neue Serie
 
 Eine bestehende Datei in `_serien/` kopieren, umbenennen (der Dateiname wird zur Adresse,
-z. B. `island.md` → `/serien/island/`), `title`, `reihenfolge` und Bilder anpassen.
+z. B. `island.md` → `/serien/island/`), `title`, `kurz` (eine Zeile für die Startseite),
+`reihenfolge` und Bilder anpassen. Den Text oben auf der Startseite ändert man in `_config.yml`
+unter `einleitung`.
 
 ## Journal-Beitrag
 

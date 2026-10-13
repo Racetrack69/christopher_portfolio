@@ -1,5 +1,6 @@
 ---
 title: Madeira
+kurz: "Die alten Bäume von Fanal im Nebel"          # eine Zeile unter dem Titel auf der Startseite
 reihenfolge: 5
 description: "Schwarzweißfotografie auf Film von Christopher Schmidtke. Madeira im Nebel, knorrige alte Bäume bei Fanal und Straßen, die sich im Grau verlieren."
 zeitraum: ""            # z. B. 2023

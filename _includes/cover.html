@@ -8,5 +8,8 @@
   <a class="cover-link" href="{{ s.url | relative_url }}">
     <span class="frame">{% include img.html base=base bild=tb alt="" eager=include.eager %}</span>
     <span class="cap"><span class="c-title">{{ s.title }}</span><span class="c-meta">{{ s.bilder | size }} Bilder</span></span>
+    {%- if s.kurz and s.kurz != "" %}
+    <span class="c-sub">{{ s.kurz }}</span>
+    {%- endif %}
   </a>
 </figure>

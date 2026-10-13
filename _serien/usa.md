@@ -1,5 +1,6 @@
 ---
 title: USA
+kurz: "Wüste, Joshua Trees und die Alabama Hills"          # eine Zeile unter dem Titel auf der Startseite
 reihenfolge: 3
 description: "Schwarzweißfotografie auf Film von Christopher Schmidtke. Dünen, Joshua Trees, eine Tankstelle in der Wüste und die Granitfelsen der Alabama Hills."
 zeitraum: ""            # z. B. 2022

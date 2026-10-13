@@ -1,5 +1,6 @@
 ---
 title: Skandinavien
+kurz: "Zwei Roadtrips in den Norden"          # eine Zeile unter dem Titel auf der Startseite
 reihenfolge: 2
 description: "Schwarzweißfotografie auf Film von Christopher Schmidtke. Der Geirangerfjord, Ålesund, Berge mit Schneefeldern und die Stockholmer U-Bahn im Fels."
 zeitraum: ""            # z. B. 2021

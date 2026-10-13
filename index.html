@@ -3,7 +3,7 @@ layout: default
 ---
 {%- assign serien = site.serien | sort: "reihenfolge" -%}
 <h1 class="vh">{{ site.title }}, Schwarzweißfotografie</h1>
-<p class="lede">Schwarzweiß auf Film. Mittelformat und Kleinbild.</p>
+<p class="intro">{{ site.einleitung }}</p>
 <div class="wall covers">
 {%- for s in serien -%}
   {%- assign m = forloop.index0 | modulo: 2 -%}
@@ -28,3 +28,21 @@ layout: default
   {%- endif -%}
 {%- endfor %}
 </div>
+{%- if site.posts.size > 0 %}
+<section class="home-journal" aria-labelledby="hj">
+  <h2 class="mini" id="hj">Aus dem Journal</h2>
+  <ul class="posts">
+    {%- for post in site.posts limit: 2 %}
+    <li>
+      <a href="{{ post.url | relative_url }}">
+        <span class="date">{% include datum.html datum=post.date %}</span>
+        <span class="pt">{{ post.title }}</span>
+        {%- if post.description %}
+        <span class="teaser">{{ post.description }}</span>
+        {%- endif %}
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+{%- endif %}
