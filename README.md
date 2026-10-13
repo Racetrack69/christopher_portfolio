@@ -112,6 +112,18 @@ nach `_posts/` verschieben und das Datum vorne an den Dateinamen setzen.
    unter `https://BENUTZERNAME.github.io`, bei jedem anderen Namen unter
    `https://BENUTZERNAME.github.io/REPOSITORY/`.
 
+## Änderungen hochladen (Update-Pakete)
+
+Nach dem ersten Upload muss nie wieder alles hochgeladen werden, nur was sich geändert hat.
+
+1. Update-Paket entpacken. Darin liegen der Ordner `hochladen` und die Datei `LIESMICH.txt`.
+2. Auf GitHub „Add file → Upload files“ und den **Inhalt** des Ordners `hochladen` hineinziehen
+   (also z. B. `_serien` und `assets`, nicht den Ordner `hochladen` selbst). GitHub legt die
+   Dateien an die richtige Stelle und überschreibt vorhandene mit gleichem Namen.
+3. Was gelöscht werden soll, steht in `LIESMICH.txt`. Hochladen löscht nichts. Löschen geht auf
+   GitHub über die Datei, dann oben rechts „…“ → „Delete file“. Dateien, die dort als „kann weg“
+   markiert sind, stören nicht, wenn sie liegen bleiben.
+
 ## Später: eigene Domain
 
 Domain unter Settings → Pages eintragen und beim Domain-Anbieter die DNS-Einträge nach der

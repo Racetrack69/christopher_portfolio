@@ -77,8 +77,8 @@ a{color:inherit}
 html.js .frame img{opacity:0;transition:opacity .7s ease}
 html.js .frame img.loaded{opacity:1}
 html.js a.frame:hover img.loaded,html.js .cover-link:hover img.loaded{opacity:.9}
-.ph figcaption,.cap{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-top:12px;font-size:13px;letter-spacing:.02em;color:var(--quiet)}
-.ph figcaption span:last-child{font-variant-numeric:tabular-nums;white-space:nowrap}
+.ph figcaption,.cap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:2px 16px;margin-top:12px;font-size:13px;letter-spacing:.02em;color:var(--quiet)}
+.ph figcaption .cap-r{margin-left:auto;text-align:right}
 .cover-link{display:block;text-decoration:none}
 .cover .c-title{font-family:var(--serif);font-size:24px;font-weight:500;line-height:1.1;color:var(--ink)}
 .cover-link:hover .c-title{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
@@ -160,7 +160,6 @@ html.js a.frame:hover img.loaded,html.js .cover-link:hover img.loaded{opacity:.9
 .article .body figure{margin:clamp(32px,4vw,48px) 0;width:min(100%, calc(52vh * var(--r,1)))}
 .article .body .paar{display:flex;gap:clamp(12px,1.6vw,20px);align-items:flex-start;margin:clamp(32px,4vw,48px) 0}
 .article .body .paar figure{flex:var(--r) 1 0;min-width:0;width:auto;margin:0}
-.article .body figcaption span{white-space:normal}
 
 /* Über mich */
 .about{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(24px,5vw,80px);align-items:start;padding-top:clamp(8px,3vw,48px)}

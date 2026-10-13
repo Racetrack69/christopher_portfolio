@@ -1,91 +1,37 @@
 ---
 title: Japan
 reihenfolge: 1
-description: ""        # leer = wird automatisch erzeugt (max. 160 Zeichen)
-zeitraum: ""           # z. B. 2019 oder 2018–2023
-titelbild: 3           # Nummer des Titelbilds auf der Startseite (1 = erstes Bild)
-reihen: [2, 1, 3, 1, 2] # wie viele Bilder nebeneinander hängen; Zeile löschen = automatisch
+description: "Schwarzweißfotografie auf Film von Christopher Schmidtke. Tokio mit der Rolleiflex, Hochhäuser in der Dämmerung, ein Shinkansen und Hochstraßen im Dunst."
+zeitraum: ""            # z. B. 2019
+titelbild: 2            # der Shinkansen über der Kreuzung
+reihen: [1, 2]          # Hochhäuser in der Dämmerung allein, dann zwei
 bilder:
-  - datei: japan-01
+  - datei: japan-hochhaeuser-daemmerung
     format: 6x6
     w: 1600
     h: 1600
-    ort: ""
+    ort: "Tokio"
     jahr: ""
-    kamera: ""
+    kamera: "Rolleiflex 2.8C"
     film: ""
-    alt: "Platzhalter: Bild 1 der Serie Japan"
-  - datei: japan-02
+    alt: "Zwei Hochhaustürme in Tokio in der Abenddämmerung, links ein Turm mit gestuften, spitzen Dächern und Antennen, rechts ein schlanker, kantiger Turm. Darunter ein dunkler Park und Straßen mit ersten Lichtern, am Horizont das Häusermeer. Um das Bild der schwarze Filmrand mit Bildnummern."
+  - datei: japan-shinkansen-kreuzung
     format: 6x6
     w: 1600
     h: 1600
-    ort: ""
+    ort: "Tokio"
     jahr: ""
-    kamera: ""
-    film: ""
-    alt: "Platzhalter: Bild 2 der Serie Japan"
-  - datei: japan-03
-    format: 6x9
-    w: 1600
-    h: 1067
-    ort: ""
-    jahr: ""
-    kamera: ""
-    film: ""
-    alt: "Platzhalter: Bild 3 der Serie Japan"
-  - datei: japan-04
-    format: 6x9
-    w: 1067
-    h: 1600
-    ort: ""
-    jahr: ""
-    kamera: ""
-    film: ""
-    alt: "Platzhalter: Bild 4 der Serie Japan"
-  - datei: japan-05
+    kamera: "Rolleiflex 2.8C"
+    film: "Ilford HP5 Plus"
+    alt: "Ein Shinkansen fährt in Tokio auf einer Hochbahn über eine breite, mehrspurige Straße mit japanischen Fahrbahnmarkierungen, links und rechts Bürohäuser mit Schriftzeichen, in der Mitte ein hohes Hochhaus. Um das Bild der schwarze Filmrand."
+  - datei: japan-hochstrassen-dunst
     format: 6x6
     w: 1600
     h: 1600
-    ort: ""
+    ort: "Tokio"
     jahr: ""
-    kamera: ""
-    film: ""
-    alt: "Platzhalter: Bild 5 der Serie Japan"
-  - datei: japan-06
-    format: kb
-    w: 1600
-    h: 1067
-    ort: ""
-    jahr: ""
-    kamera: ""
-    film: ""
-    alt: "Platzhalter: Bild 6 der Serie Japan"
-  - datei: japan-07
-    format: 6x6
-    w: 1600
-    h: 1600
-    ort: ""
-    jahr: ""
-    kamera: ""
-    film: ""
-    alt: "Platzhalter: Bild 7 der Serie Japan"
-  - datei: japan-08
-    format: 6x9
-    w: 1067
-    h: 1600
-    ort: ""
-    jahr: ""
-    kamera: ""
-    film: ""
-    alt: "Platzhalter: Bild 8 der Serie Japan"
-  - datei: japan-09
-    format: 6x6
-    w: 1600
-    h: 1600
-    ort: ""
-    jahr: ""
-    kamera: ""
-    film: ""
-    alt: "Platzhalter: Bild 9 der Serie Japan"
+    kamera: "Rolleiflex 2.8C"
+    film: "Ilford HP5 Plus"
+    alt: "Blick von weit oben auf ein dichtes Stadtviertel von Tokio im Dunst. Links schwingen sich Hochstraßen mit Autos zwischen den Häusern hindurch, in der Mitte eine Gruppe weißer, verschachtelter Wohnblöcke zwischen Bäumen, rechts angeschnitten eine Hochhausfassade."
 ---
-[Zwei, drei Sätze zur Serie: wo und wann die Bilder entstanden sind und was dich an diesem Ort interessiert hat.]
+Mit einer „kompakten“ Mittelformatkamera wie der Rolleiflex macht es Spaß, Tokio zu erkunden. Die Vibes dort sind einfach toll. Die Stadt ist voller Energie und irgendwie ganz anders. Es gibt so viel zu entdecken.

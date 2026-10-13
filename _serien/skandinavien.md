@@ -1,91 +1,46 @@
 ---
 title: Skandinavien
 reihenfolge: 2
-description: ""
-zeitraum: ""
-titelbild: 2
-reihen: [1, 2, 3, 1, 2]
+description: "Schwarzweißfotografie auf Film von Christopher Schmidtke. Der Geirangerfjord, Ålesund, Berge mit Schneefeldern und die Stockholmer U-Bahn im Fels."
+zeitraum: ""            # z. B. 2021
+titelbild: 1            # der Fjord mit den Wasserfällen
+reihen: [1, 2, 1]       # Fjord allein, Berg und Hafen nebeneinander, U-Bahn zum Schluss
 bilder:
-  - datei: skandinavien-01
-    format: 6x9
-    w: 1600
-    h: 1067
-    ort: ""
-    jahr: ""
-    kamera: ""
-    film: ""
-    alt: "Platzhalter: Bild 1 der Serie Skandinavien"
-  - datei: skandinavien-02
+  - datei: skandinavien-fjord-wasserfaelle
     format: 6x6
     w: 1600
     h: 1600
-    ort: ""
+    ort: "Geirangerfjord"
     jahr: ""
     kamera: ""
-    film: ""
-    alt: "Platzhalter: Bild 2 der Serie Skandinavien"
-  - datei: skandinavien-03
-    format: 6x9
+    film: "Ilford HP5 Plus"
+    alt: "Blick von oben in den Geirangerfjord zwischen steilen, bewaldeten Felswänden, rechts stürzen schmale Wasserfälle den Hang hinab, auf dem dunklen Wasser ein kleines Schiff. Um das Bild der schwarze Filmrand."
+  - datei: skandinavien-schneefeld-berg
+    format: 6x45
     w: 1600
-    h: 1067
+    h: 1129
     ort: ""
     jahr: ""
     kamera: ""
-    film: ""
-    alt: "Platzhalter: Bild 3 der Serie Skandinavien"
-  - datei: skandinavien-04
-    format: 6x9
-    w: 1067
-    h: 1600
-    ort: ""
-    jahr: ""
-    kamera: ""
-    film: ""
-    alt: "Platzhalter: Bild 4 der Serie Skandinavien"
-  - datei: skandinavien-05
-    format: 6x9
-    w: 1067
-    h: 1600
-    ort: ""
-    jahr: ""
-    kamera: ""
-    film: ""
-    alt: "Platzhalter: Bild 5 der Serie Skandinavien"
-  - datei: skandinavien-06
-    format: 6x6
+    film: "Ilford HP5 Plus"
+    alt: "Ein runder Berg mit einem großen, zerklüfteten Schneefeld unter tief hängenden Wolken, davor kahle, zerfurchte Felsrücken mit einzelnen Schneeresten. Um das Bild der schwarze Filmrand."
+  - datei: skandinavien-hafenkanal
+    format: 6x45
     w: 1600
-    h: 1600
-    ort: ""
+    h: 1104
+    ort: "Ålesund"
     jahr: ""
     kamera: ""
-    film: ""
-    alt: "Platzhalter: Bild 6 der Serie Skandinavien"
-  - datei: skandinavien-07
-    format: 6x9
+    film: "Ilford HP5 Plus"
+    alt: "Ein schmaler Hafenkanal in Ålesund zwischen hellen Häusern mit Spitzgiebeln, im ruhigen Wasser spiegeln sich Häuser und Wolken, rechts ein kleines Boot an einem Steg vor einer Kaimauer. Um das Bild der schwarze Filmrand."
+  - datei: skandinavien-ubahn-rolltreppen
+    format: kb
     w: 1600
-    h: 1067
-    ort: ""
+    h: 1501
+    ort: "Stockholm"
     jahr: ""
     kamera: ""
-    film: ""
-    alt: "Platzhalter: Bild 7 der Serie Skandinavien"
-  - datei: skandinavien-08
-    format: 6x6
-    w: 1600
-    h: 1600
-    ort: ""
-    jahr: ""
-    kamera: ""
-    film: ""
-    alt: "Platzhalter: Bild 8 der Serie Skandinavien"
-  - datei: skandinavien-09
-    format: 6x9
-    w: 1067
-    h: 1600
-    ort: ""
-    jahr: ""
-    kamera: ""
-    film: ""
-    alt: "Platzhalter: Bild 9 der Serie Skandinavien"
+    film: "Ilford HP5 Plus"
+    alt: "Eine U-Bahn-Station in Stockholm, in den Fels gehauen: Unter der rauen Felsdecke führen hell beleuchtete Rolltreppen nach oben, im Vordergrund geht eine Person verwischt über den glänzenden Boden. Um das Bild der Kleinbildfilm mit Perforation und Aufdruck."
 ---
-[Zwei, drei Sätze zur Serie: Route, Jahreszeit, Licht.]
+Ein Fjord mit Wasserfällen, ein Berg mit Schneefeld unter tiefen Wolken, ein Hafenkanal in Ålesund und eine U-Bahn-Station tief im Fels unter Stockholm.

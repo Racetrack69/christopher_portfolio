@@ -1,5 +1,6 @@
 {%- comment -%}
-  Ein Bild auf der Serienseite: Rahmen, Link zur großen Ansicht, Beschriftung.
+  Ein Bild auf der Serienseite: Rahmen, Link zur großen Ansicht, Beschriftung
+  (links Titel bzw. Ort und Format, rechts Kamera und Film).
   Parameter: bild, serie, nr (1, 2, …), pos (Position in der Reihe, für die Einblend-Verzögerung)
 {%- endcomment -%}
 {%- assign b = include.bild -%}
@@ -17,5 +18,6 @@
   <a class="frame" href="{{ base | append: '.jpg' | relative_url }}" data-title="{{ titel | escape }}" data-meta="{{ info | escape }}">
     {% include img.html base=base bild=b alt=b.alt eager=eager %}
   </a>
-  <figcaption><span>{{ titel }}</span><span>{{ label }}</span></figcaption>
+  {%- capture geraet -%}{{ b.kamera }}{% if b.kamera and b.kamera != "" and b.film and b.film != "" %} · {% endif %}{{ b.film }}{%- endcapture %}
+  <figcaption><span>{{ titel }} · {{ label }}</span>{% if geraet != "" %}<span class="cap-r">{{ geraet }}</span>{% endif %}</figcaption>
 </figure>

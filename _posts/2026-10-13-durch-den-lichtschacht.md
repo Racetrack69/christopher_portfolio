@@ -44,6 +44,6 @@ Ganz fertig ist ein Bild für mich erst in der Dunkelkammer. Wenn im Entwickler 
 
 Besonders beeindruckt hat mich Madeira im Nebel. Er ließ kaum mehr übrig als Strukturen und Formen, und genau damit konnte ich wunderbar experimentieren. Ein paar dieser Bilder zeigt die Serie [Madeira]({{ '/serien/madeira/' | relative_url }}).
 
-{% include beitragsbild.html serie="madeira" datei="madeira-baum-kreuz" w="1000" h="1000" alt="Ein Baum mit zwei sich kreuzenden Stämmen, die unten einen Bogen bilden, links im Nebel ein kleinerer, schief gewachsener Baum." text="Madeira" %}
+{% include beitragsbild.html serie="madeira" datei="madeira-baum-kreuz" w="1000" h="1000" alt="Ein Baum mit zwei sich kreuzenden Stämmen, die unten einen Bogen bilden, links im Nebel ein kleinerer, schief gewachsener Baum." text="Fanal, Madeira" %}
 
 Vernünftig ist das alles nicht, das weiß ich. Wenn mich jemand fragt, warum ich es trotzdem mache, habe ich nur eine kurze Antwort: irrationale Leidenschaft. Die trage ich gern den Berg hinauf.
