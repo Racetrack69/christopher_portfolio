@@ -36,7 +36,7 @@ a{color:inherit}
 .skip{position:absolute;left:-9999px;top:8px;z-index:200;padding:8px 14px;background:var(--ink);color:var(--wall);text-decoration:none}
 .skip:focus{left:16px}
 .wrap{max-width:1400px;margin-inline:auto;padding-inline:var(--side)}
-.col{max-width:46rem}
+.col{max-width:42rem;margin-inline:auto}
 
 /* Weicher Übergang zwischen Seiten, wo der Browser es kann */
 @media (prefers-reduced-motion:no-preference){@view-transition{navigation:auto}}
@@ -155,15 +155,16 @@ html.js a.frame:hover img.loaded,html.js .cover-link:hover img.loaded{opacity:.9
 }
 
 /* Artikel */
-/* Eine Spalte, 40rem. Bilder höchstens so breit wie der Text und gut halb so hoch wie der Bildschirm, damit der Text führt */
-.article{max-width:40rem}
+/* Eine zentrierte Spalte, 42rem. Bilder höchstens gut halb so hoch wie der Bildschirm, damit der Text führt.
+   Querformate dürfen über die Textspalte hinausragen (bis 52rem), mittig zur Spalte. */
+.article{max-width:42rem;margin-inline:auto}
 .back{display:inline-block;margin-bottom:28px;padding-block:6px;font-size:14px;color:var(--quiet);text-decoration:none}
 .back:hover{color:var(--ink)}
 .article .date{margin:14px 0 36px;font-size:13px;color:var(--quiet)}
 .article .body p,.article .body li{font-size:clamp(17px,1.3vw,18px);font-weight:380;line-height:1.75;color:var(--ink-2)}
 .article .body p{margin:0 0 1.2em}
 .article .body h2{margin:1.6em 0 .5em;font-family:var(--serif);font-weight:500;font-size:clamp(22px,1.9vw,26px);line-height:1.15}
-.article .body figure{margin:clamp(32px,4vw,48px) 0;width:min(100%, calc(52vh * var(--r,1)))}
+.article .body figure{--fw:min(52rem, calc(100vw - 2 * var(--side)), calc(52vh * var(--r,1)));width:var(--fw);margin:clamp(32px,4vw,48px) calc((100% - var(--fw)) / 2)}
 .article .body .paar{display:flex;gap:clamp(12px,1.6vw,20px);align-items:flex-start;margin:clamp(32px,4vw,48px) 0}
 .article .body .paar figure{flex:var(--r) 1 0;min-width:0;width:auto;margin:0}
 
