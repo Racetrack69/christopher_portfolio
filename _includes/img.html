@@ -1,0 +1,6 @@
+{%- comment -%}
+  Ein Bild. Parameter: base (Pfad ohne Endung), bild (mit w, h) oder w und h, alt, eager
+{%- endcomment -%}
+{%- assign pw = include.bild.w | default: include.w | plus: 0 -%}
+{%- assign ph = include.bild.h | default: include.h | plus: 0 -%}
+<img src="{{ include.base | append: '.jpg' | relative_url }}" width="{{ pw }}" height="{{ ph }}" alt="{{ include.alt | escape }}"{% if include.eager %} fetchpriority="high"{% else %} loading="lazy"{% endif %} decoding="async">

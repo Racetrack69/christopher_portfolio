@@ -1,0 +1,94 @@
+---
+layout: default
+---
+{%- assign serien = site.serien | sort: "reihenfolge" -%}
+{%- assign anzahl_serien = serien | size -%}
+{%- assign pos = 0 -%}
+{%- for s in serien -%}{%- if s.url == page.url -%}{%- assign pos = forloop.index0 -%}{%- endif -%}{%- endfor -%}
+{%- assign bilder = page.bilder -%}
+{%- assign n_bilder = bilder | size -%}
+
+{%- comment -%} Formate dieser Serie für die Zeile unter dem Titel {%- endcomment -%}
+{%- assign formate = "" -%}
+{%- for b in bilder -%}
+  {%- assign f = site.data.formate[b.format] | default: b.format -%}
+  {%- unless formate contains f -%}
+    {%- if formate != "" -%}{%- assign formate = formate | append: ", " -%}{%- endif -%}
+    {%- assign formate = formate | append: f -%}
+  {%- endunless -%}
+{%- endfor -%}
+
+{%- comment -%}
+  Reihen: feste Angabe aus "reihen" oder automatisch
+  (eine Reihe ist voll, wenn die Seitenverhältnisse zusammen 2,8 erreichen oder 3 Bilder drin sind)
+{%- endcomment -%}
+{%- assign plan = "" -%}
+{%- if page.reihen -%}
+  {%- assign verteilt = 0 -%}
+  {%- for rn in page.reihen -%}
+    {%- assign rest = n_bilder | minus: verteilt -%}
+    {%- if rest > 0 -%}
+      {%- assign k = rn | plus: 0 -%}
+      {%- if k > rest -%}{%- assign k = rest -%}{%- endif -%}
+      {%- if k > 0 -%}
+        {%- assign plan = plan | append: k | append: "," -%}
+        {%- assign verteilt = verteilt | plus: k -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {%- assign rest = n_bilder | minus: verteilt -%}
+  {%- if rest > 0 -%}{%- assign plan = plan | append: rest -%}{%- endif -%}
+{%- else -%}
+  {%- assign zahl = 0 -%}
+  {%- assign summe = 0.0 -%}
+  {%- for b in bilder -%}
+    {%- assign r = b.w | times: 1.0 | divided_by: b.h -%}
+    {%- assign summe = summe | plus: r -%}
+    {%- assign zahl = zahl | plus: 1 -%}
+    {%- if summe >= 2.8 or zahl == 3 -%}
+      {%- assign plan = plan | append: zahl | append: "," -%}
+      {%- assign zahl = 0 -%}
+      {%- assign summe = 0.0 -%}
+    {%- endif -%}
+  {%- endfor -%}
+  {%- if zahl > 0 -%}{%- assign plan = plan | append: zahl -%}{%- endif -%}
+{%- endif -%}
+{%- assign reihen = plan | split: "," -%}
+
+<header class="s-head">
+  <p class="eyebrow">Serie {{ pos | plus: 1 }} / {{ anzahl_serien }}</p>
+  <h1 class="s-title">{{ page.title }}</h1>
+  <div class="s-intro">{{ content }}</div>
+  <p class="s-meta">{{ n_bilder }} Bilder · {{ formate }}{% if page.zeitraum and page.zeitraum != "" %} · {{ page.zeitraum }}{% endif %}</p>
+</header>
+
+<div class="wall wall--series">
+{%- assign p = 0 -%}
+{%- for rn in reihen -%}
+  {%- assign k = rn | plus: 0 -%}
+  {%- assign summe = 0.0 -%}
+  {%- for b in bilder limit: k offset: p -%}
+    {%- assign r = b.w | times: 1.0 | divided_by: b.h -%}
+    {%- assign summe = summe | plus: r -%}
+  {%- endfor %}
+  <div class="row" style="--sum:{{ summe | round: 4 }};--n:{{ k }}">
+  {%- for b in bilder limit: k offset: p -%}
+    {%- assign nr = p | plus: forloop.index %}
+    {% include bild.html bild=b serie=page.slug nr=nr pos=forloop.index0 %}
+  {%- endfor %}
+  </div>
+  {%- assign p = p | plus: k -%}
+{%- endfor %}
+</div>
+
+{%- assign vor = pos | minus: 1 -%}
+{%- if vor < 0 -%}{%- assign vor = anzahl_serien | minus: 1 -%}{%- endif -%}
+{%- assign nach = pos | plus: 1 -%}
+{%- if nach >= anzahl_serien -%}{%- assign nach = 0 -%}{%- endif %}
+<nav class="pager" aria-label="Weitere Serien">
+  <a href="{{ serien[vor].url | relative_url }}">← {{ serien[vor].title }}</a>
+  <a href="{{ '/' | relative_url }}">Alle Serien</a>
+  <a href="{{ serien[nach].url | relative_url }}">{{ serien[nach].title }} →</a>
+</nav>
+
+{% include lightbox.html %}

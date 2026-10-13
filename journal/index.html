@@ -1,0 +1,27 @@
+---
+layout: default
+title: Journal
+description: Kurze Texte über analoge Schwarzweißfotografie, Film und Formate.
+permalink: /journal/
+---
+<div class="col">
+  <h1 class="p-title">Journal</h1>
+  <p class="p-note">Kurze Texte über analoge Fotografie.</p>
+  {%- if site.posts.size > 0 %}
+  <ul class="posts">
+    {%- for post in site.posts %}
+    <li>
+      <a href="{{ post.url | relative_url }}">
+        <span class="date">{% include datum.html datum=post.date %}</span>
+        <span class="pt">{{ post.title }}</span>
+        {%- if post.description %}
+        <span class="teaser">{{ post.description }}</span>
+        {%- endif %}
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
+  {%- else %}
+  <p>Der erste Beitrag folgt.</p>
+  {%- endif %}
+</div>

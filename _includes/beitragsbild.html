@@ -1,0 +1,11 @@
+{%- comment -%}
+  Bild in einem Journal-Beitrag.
+  Aufruf: {% include beitragsbild.html serie="japan" datei="japan-01" w="1600" h="1600" alt="…" text="Bildunterschrift" %}
+{%- endcomment -%}
+{%- assign base = '/assets/images/' | append: include.serie | append: '/' | append: include.datei -%}
+<figure class="ph">
+  <span class="frame" style="--w:{{ include.w }};--h:{{ include.h }}">{% include img.html base=base w=include.w h=include.h alt=include.alt %}</span>
+  {%- if include.text %}
+  <figcaption><span>{{ include.text }}</span></figcaption>
+  {%- endif %}
+</figure>

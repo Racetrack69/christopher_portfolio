@@ -1,0 +1,12 @@
+{%- comment -%} Titelbild einer Serie auf der Startseite. Parameter: serie, k (Position in der Reihe), eager {%- endcomment -%}
+{%- assign s = include.serie -%}
+{%- assign ti = s.titelbild | default: 1 | minus: 1 -%}
+{%- assign tb = s.bilder[ti] -%}
+{%- assign r = tb.w | times: 1.0 | divided_by: tb.h -%}
+{%- assign base = '/assets/images/' | append: s.slug | append: '/' | append: tb.datei -%}
+<figure class="ph cover" style="--w:{{ tb.w }};--h:{{ tb.h }};--r:{{ r | round: 4 }};--d:{{ include.k | times: 90 }}ms">
+  <a class="cover-link" href="{{ s.url | relative_url }}">
+    <span class="frame">{% include img.html base=base bild=tb alt="" eager=include.eager %}</span>
+    <span class="cap"><span class="c-title">{{ s.title }}</span><span class="c-meta">{{ s.bilder | size }} Bilder</span></span>
+  </a>
+</figure>

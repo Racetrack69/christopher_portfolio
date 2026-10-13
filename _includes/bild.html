@@ -1,0 +1,21 @@
+{%- comment -%}
+  Ein Bild auf der Serienseite: Rahmen, Link zur großen Ansicht, Beschriftung.
+  Parameter: bild, serie, nr (1, 2, …), pos (Position in der Reihe, für die Einblend-Verzögerung)
+{%- endcomment -%}
+{%- assign b = include.bild -%}
+{%- assign base = '/assets/images/' | append: include.serie | append: '/' | append: b.datei -%}
+{%- assign label = site.data.formate[b.format] | default: b.format -%}
+{%- assign r = b.w | times: 1.0 | divided_by: b.h -%}
+{%- if b.ort and b.ort != "" -%}
+  {%- capture titel -%}{{ b.ort }}{% if b.jahr and b.jahr != "" %}, {{ b.jahr }}{% endif %}{%- endcapture -%}
+{%- else -%}
+  {%- capture titel -%}Ohne Titel, {% if include.nr < 10 %}0{% endif %}{{ include.nr }}{%- endcapture -%}
+{%- endif -%}
+{%- capture info -%}{{ label }}{% if b.kamera and b.kamera != "" %} · {{ b.kamera }}{% endif %}{% if b.film and b.film != "" %} · {{ b.film }}{% endif %}{%- endcapture -%}
+{%- assign eager = false -%}{%- if include.nr <= 2 -%}{%- assign eager = true -%}{%- endif -%}
+<figure class="ph" style="--w:{{ b.w }};--h:{{ b.h }};--r:{{ r | round: 4 }};--d:{{ include.pos | times: 90 }}ms">
+  <a class="frame" href="{{ base | append: '.jpg' | relative_url }}" data-title="{{ titel | escape }}" data-meta="{{ info | escape }}">
+    {% include img.html base=base bild=b alt=b.alt eager=eager %}
+  </a>
+  <figcaption><span>{{ titel }}</span><span>{{ label }}</span></figcaption>
+</figure>

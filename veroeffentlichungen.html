@@ -1,0 +1,25 @@
+---
+layout: default
+title: Veröffentlichungen
+description: Veröffentlichungen von Christopher Schmidtke in Fotografie-Magazinen.
+permalink: /veroeffentlichungen/
+---
+{%- assign liste = site.data.veroeffentlichungen | sort: "jahr" | reverse -%}
+<div class="col">
+  <h1 class="p-title">Veröffentlichungen</h1>
+  {%- if liste.size > 0 %}
+  <ol class="pubs">
+    {%- for v in liste %}
+    <li>
+      <span class="yr">{{ v.jahr }}</span>
+      <div>
+        <div class="mag">{% if v.link %}<a href="{{ v.link }}" rel="noopener">{{ v.magazin }}</a>{% else %}{{ v.magazin }}{% endif %}</div>
+        <div class="det">{{ v.ausgabe }}{% if v.inhalt %} · {{ v.inhalt }}{% endif %}</div>
+      </div>
+    </li>
+    {%- endfor %}
+  </ol>
+  {%- else %}
+  <p class="p-note">Noch keine Einträge.</p>
+  {%- endif %}
+</div>

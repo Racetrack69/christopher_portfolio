@@ -1,0 +1,65 @@
+# ------------------------------------------------------------
+# Grundeinstellungen der Seite
+# ------------------------------------------------------------
+title: Christopher Schmidtke
+description: >-
+  Schwarzweißfotografie auf Film, im Mittelformat und auf Kleinbild.
+  Serien aus Japan, Skandinavien, den USA und in Infrarot.
+lang: de
+locale: de_DE
+
+# Die Adresse der Seite (url, baseurl) setzt GitHub Pages automatisch,
+# passend zum Repository-Namen und später zur eigenen Domain. Nicht eintragen.
+
+author:
+  name: Christopher Schmidtke
+  email: ""          # z. B. hallo@deine-domain.de
+  instagram: ""      # nur der Name, ohne @
+
+# Suchmaschinen: false = alle Seiten tragen "noindex" (Testphase).
+# Auf true stellen, sobald Bilder, Texte und Domain stehen.
+indexierung: false
+
+# Impressum und Datenschutz im Footer verlinken (mit eigener Domain auf true)
+rechtliches: false
+
+# Desktop-Hängung der Serien: reihen | raster | einzeln
+# Auf dem Handy gibt es immer eine Spalte.
+haengung: reihen
+
+# Lange Kante der Bilder in Pixel. tools/bilder.py liest diesen Wert.
+# Nach einer Änderung die Bilder mit tools/bilder.py neu erzeugen.
+bildgroesse: 1600
+
+# Vorschaubild für Link-Vorschauen auf Seiten ohne eigenes Bild
+og_bild: /assets/images/japan/japan-03.jpg
+
+# ------------------------------------------------------------
+# Inhalte
+# ------------------------------------------------------------
+collections:
+  serien:
+    output: true
+    permalink: /serien/:name/
+
+defaults:
+  - scope: { path: "", type: serien }
+    values: { layout: serie }
+  - scope: { path: "", type: posts }
+    values: { layout: beitrag, permalink: "/journal/:title/" }
+
+# ------------------------------------------------------------
+# Technik
+# ------------------------------------------------------------
+timezone: Europe/Berlin
+markdown: kramdown
+kramdown:
+  smart_quotes: ["sbquo", "lsquo", "bdquo", "ldquo"]   # deutsche Anführungszeichen
+
+exclude:
+  - README.md
+  - tools
+  - _eingang
+  - Gemfile
+  - Gemfile.lock
+  - vendor

@@ -1,0 +1,9 @@
+<footer class="foot wrap">
+  <span>© {{ site.time | date: "%Y" }} {{ site.author.name }}</span>
+  {%- if site.rechtliches %}
+  <span class="foot-links">
+    <a href="{{ '/impressum/' | relative_url }}">Impressum</a>
+    <a href="{{ '/datenschutz/' | relative_url }}">Datenschutz</a>
+  </span>
+  {%- endif %}
+</footer>

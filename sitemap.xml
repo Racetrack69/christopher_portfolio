@@ -1,0 +1,26 @@
+---
+layout: null
+permalink: /sitemap.xml
+sitemap: false
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url><loc>{{ '/' | absolute_url }}</loc></url>
+  {%- assign serien = site.serien | sort: "reihenfolge" %}
+  {%- for s in serien %}
+  <url>
+    <loc>{{ s.url | absolute_url }}</loc>
+    {%- for b in s.bilder %}
+    <image:image><image:loc>{{ '/assets/images/' | append: s.slug | append: '/' | append: b.datei | append: '.jpg' | absolute_url }}</image:loc></image:image>
+    {%- endfor %}
+  </url>
+  {%- endfor %}
+  {%- for p in site.pages %}
+  {%- if p.sitemap != false and p.noindex != true and p.title and p.url != "/" %}
+  <url><loc>{{ p.url | absolute_url }}</loc></url>
+  {%- endif %}
+  {%- endfor %}
+  {%- for post in site.posts %}
+  <url><loc>{{ post.url | absolute_url }}</loc><lastmod>{{ post.date | date_to_xmlschema }}</lastmod></url>
+  {%- endfor %}
+</urlset>

@@ -1,0 +1,18 @@
+# Veröffentlichungen in Magazinen. Die Seite sortiert automatisch, neueste zuerst.
+# Felder: jahr, magazin, ausgabe, inhalt (optional), link (optional)
+# Die drei Einträge sind Beispiele. Ersetzen oder löschen.
+
+- jahr: 2026
+  magazin: "[Magazin]"
+  ausgabe: "Ausgabe [Nr.]"
+  inhalt: "Serie Japan, [Anzahl] Bilder"
+
+- jahr: 2025
+  magazin: "[Magazin]"
+  ausgabe: "Online-Feature"
+  inhalt: "Serie Infrarot"
+
+- jahr: 2024
+  magazin: "[Magazin]"
+  ausgabe: "Ausgabe [Nr.]"
+  inhalt: "Einzelbild aus Skandinavien"

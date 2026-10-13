@@ -1,0 +1,59 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add("js")</script>
+{%- comment -%} Seitentitel {%- endcomment -%}
+{%- if page.url == "/" -%}
+  {%- capture seitentitel -%}{{ site.title }} · Schwarzweißfotografie{%- endcapture -%}
+{%- elsif page.collection == "serien" -%}
+  {%- capture seitentitel -%}{{ page.title }}, Schwarzweißfotografie · {{ site.title }}{%- endcapture -%}
+{%- elsif page.layout == "beitrag" -%}
+  {%- capture seitentitel -%}{{ page.title }} · Journal · {{ site.title }}{%- endcapture -%}
+{%- else -%}
+  {%- capture seitentitel -%}{{ page.title }} · {{ site.title }}{%- endcapture -%}
+{%- endif -%}
+{%- comment -%} Beschreibung: eigene Angabe, sonst automatisch {%- endcomment -%}
+{%- if page.description and page.description != "" -%}
+  {%- assign beschreibung = page.description -%}
+{%- elsif page.collection == "serien" -%}
+  {%- capture beschreibung -%}{{ page.title }}: {{ page.bilder | size }} Schwarzweißfotografien auf Film von {{ site.author.name }}.{%- endcapture -%}
+{%- elsif page.excerpt -%}
+  {%- assign beschreibung = page.excerpt -%}
+{%- else -%}
+  {%- assign beschreibung = site.description -%}
+{%- endif -%}
+{%- assign beschreibung = beschreibung | strip_html | normalize_whitespace | truncate: 160 -%}
+{%- comment -%} Vorschaubild: Titelbild der Serie, Bild des Beitrags oder Standard {%- endcomment -%}
+{%- assign og = site.og_bild -%}
+{%- assign og_alt = "" -%}
+{%- if page.collection == "serien" -%}
+  {%- assign ti = page.titelbild | default: 1 | minus: 1 -%}
+  {%- assign tb = page.bilder[ti] -%}
+  {%- capture og -%}/assets/images/{{ page.slug }}/{{ tb.datei }}.jpg{%- endcapture -%}
+  {%- assign og_alt = tb.alt -%}
+{%- elsif page.bild -%}
+  {%- assign og = page.bild -%}
+{%- endif %}
+<title>{{ seitentitel | strip | escape }}</title>
+<meta name="description" content="{{ beschreibung | escape }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+{%- unless site.indexierung %}
+<meta name="robots" content="noindex">
+{%- else %}{% if page.noindex %}
+<meta name="robots" content="noindex">
+{%- endif %}{% endunless %}
+<meta property="og:type" content="{% if page.layout == 'beitrag' %}article{% else %}website{% endif %}">
+<meta property="og:site_name" content="{{ site.title | escape }}">
+<meta property="og:locale" content="{{ site.locale | default: 'de_DE' }}">
+<meta property="og:title" content="{{ seitentitel | strip | escape }}">
+<meta property="og:description" content="{{ beschreibung | escape }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ og | absolute_url }}">
+{%- if og_alt != "" %}
+<meta property="og:image:alt" content="{{ og_alt | escape }}">
+{%- endif %}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ECEBE8">
+<link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="preload" href="{{ '/assets/fonts/jost-latin-wght-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+{% include schema.html %}

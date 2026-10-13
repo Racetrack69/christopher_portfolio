@@ -1,0 +1,30 @@
+---
+layout: default
+---
+{%- assign serien = site.serien | sort: "reihenfolge" -%}
+<h1 class="vh">{{ site.title }}, Schwarzweißfotografie</h1>
+<p class="lede">Schwarzweiß auf Film. Mittelformat und Kleinbild.</p>
+<div class="wall covers">
+{%- for s in serien -%}
+  {%- assign m = forloop.index0 | modulo: 2 -%}
+  {%- if m == 0 -%}
+    {%- assign ti = s.titelbild | default: 1 | minus: 1 -%}
+    {%- assign ta = s.bilder[ti] -%}
+    {%- assign rs = ta.w | times: 1.0 | divided_by: ta.h -%}
+    {%- assign rn = 1 -%}
+    {%- assign naechste = serien[forloop.index] -%}
+    {%- if naechste -%}
+      {%- assign tj = naechste.titelbild | default: 1 | minus: 1 -%}
+      {%- assign tn = naechste.bilder[tj] -%}
+      {%- assign rb = tn.w | times: 1.0 | divided_by: tn.h -%}
+      {%- assign rs = rs | plus: rb -%}
+      {%- assign rn = 2 -%}
+    {%- endif %}
+  <div class="row" style="--sum:{{ rs | round: 4 }};--n:{{ rn }}">
+  {%- endif %}
+    {% include cover.html serie=s k=m eager=forloop.first %}
+  {%- if m == 1 or forloop.last %}
+  </div>
+  {%- endif -%}
+{%- endfor %}
+</div>

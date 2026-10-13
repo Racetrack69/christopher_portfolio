@@ -1,0 +1,53 @@
+{%- comment -%}
+  Strukturierte Daten (schema.org) für Suchmaschinen:
+  Person und Website auf jeder Seite, dazu Bildergalerie (Serien) oder Artikel (Journal).
+{%- endcomment -%}
+{%- assign start = '/' | absolute_url -%}
+{%- assign person_id = '/#person' | absolute_url -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": {{ person_id | jsonify }},
+      "name": {{ site.author.name | jsonify }},
+      "url": {{ start | jsonify }}{% if site.author.instagram and site.author.instagram != "" %},
+      "sameAs": [{{ 'https://www.instagram.com/' | append: site.author.instagram | append: '/' | jsonify }}]{% endif %}
+    },
+    {
+      "@type": "WebSite",
+      "@id": {{ '/#website' | absolute_url | jsonify }},
+      "url": {{ start | jsonify }},
+      "name": {{ site.title | jsonify }},
+      "inLanguage": "de",
+      "publisher": { "@id": {{ person_id | jsonify }} }
+    }{% if page.collection == "serien" %},
+    {
+      "@type": "ImageGallery",
+      "name": {{ page.title | jsonify }},
+      "url": {{ page.url | absolute_url | jsonify }},
+      "inLanguage": "de",
+      "author": { "@id": {{ person_id | jsonify }} },
+      "image": [{% for b in page.bilder %}
+        {
+          "@type": "ImageObject",
+          "contentUrl": {{ '/assets/images/' | append: page.slug | append: '/' | append: b.datei | append: '.jpg' | absolute_url | jsonify }},
+          "description": {{ b.alt | jsonify }},
+          "creator": { "@type": "Person", "name": {{ site.author.name | jsonify }} },
+          "creditText": {{ site.author.name | jsonify }},
+          "copyrightNotice": {{ '© ' | append: site.author.name | jsonify }}
+        }{% unless forloop.last %},{% endunless %}{% endfor %}
+      ]
+    }{% elsif page.layout == "beitrag" %},
+    {
+      "@type": "BlogPosting",
+      "headline": {{ page.title | jsonify }},
+      "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+      "url": {{ page.url | absolute_url | jsonify }},
+      "inLanguage": "de",
+      "author": { "@id": {{ person_id | jsonify }} }
+    }{% endif %}
+  ]
+}
+</script>

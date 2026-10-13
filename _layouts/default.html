@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'de' }}" data-hang="{{ site.haengung | default: 'reihen' }}">
+<head>
+{% include head.html %}
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt</a>
+{% include header.html %}
+<main id="inhalt" class="wrap">
+{{ content }}
+</main>
+{% include footer.html %}
+<script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{%- assign nav_serien = site.serien | sort: "reihenfolge" -%}
+<div class="bar" id="bar">
+  <header class="head wrap">
+    <a class="mark" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menü</button>
+    <nav id="nav" aria-label="Hauptnavigation">
+      <ul class="nav">
+        <li class="has-sub">
+          <a href="{{ '/' | relative_url }}"{% if page.url == "/" %} aria-current="page"{% elsif page.collection == "serien" %} aria-current="true"{% endif %}>Serien</a>
+          <ul class="sub">
+            {%- for s in nav_serien %}
+            <li><a href="{{ s.url | relative_url }}"{% if page.url == s.url %} aria-current="page"{% endif %}>{{ s.title }}</a></li>
+            {%- endfor %}
+          </ul>
+        </li>
+        <li><a href="{{ '/veroeffentlichungen/' | relative_url }}"{% if page.url == "/veroeffentlichungen/" %} aria-current="page"{% endif %}>Veröffentlichungen</a></li>
+        <li><a href="{{ '/journal/' | relative_url }}"{% if page.url == "/journal/" %} aria-current="page"{% elsif page.layout == "beitrag" %} aria-current="true"{% endif %}>Journal</a></li>
+        <li><a href="{{ '/ueber-mich/' | relative_url }}"{% if page.url == "/ueber-mich/" %} aria-current="page"{% endif %}>Über mich</a></li>
+      </ul>
+    </nav>
+  </header>
+</div>
