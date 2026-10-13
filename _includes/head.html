@@ -58,5 +58,6 @@
 <link rel="apple-touch-icon" href="{{ '/assets/apple-touch-icon.png' | relative_url }}">
 <link rel="preload" href="{{ '/assets/fonts/jost-latin-wght-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{{ '/assets/fonts/cormorant-garamond-latin-500-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+{%- comment -%} ?v= ändert sich bei jedem Build, damit Browser nach einem Upload sofort die neue Gestaltung laden {%- endcomment %}
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M%S' }}">
 {% include schema.html %}
