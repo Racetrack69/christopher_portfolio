@@ -6,8 +6,8 @@
    ------------------------------------------------------------ */
 
 @font-face{font-family:"Jost";src:url("../fonts/jost-latin-wght-normal.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
-@font-face{font-family:"Source Serif 4";src:url("../fonts/source-serif-4-latin-400-normal.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:"Source Serif 4";src:url("../fonts/source-serif-4-latin-400-italic.woff2") format("woff2");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Cormorant Garamond";src:url("../fonts/cormorant-garamond-latin-400-normal.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Cormorant Garamond";src:url("../fonts/cormorant-garamond-latin-500-normal.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
 
 :root{
   --wall:#ECEBE8;   /* Wandfarbe, fast neutral */
@@ -17,7 +17,7 @@
   --quiet:#6B6964;  /* Beschriftungen, inaktive Navigation */
   --line:#D3D1CC;
   --sans:"Jost","Futura","Century Gothic","Avenir Next",system-ui,sans-serif;
-  --serif:"Source Serif 4","Iowan Old Style",Georgia,serif;
+  --serif:"Cormorant Garamond","Cormorant",Garamond,"Iowan Old Style",Georgia,serif;  /* Name und Überschriften */
   --side:clamp(16px,5vw,80px);
   --gap:clamp(16px,2.6vw,40px);
   --row-gap:clamp(40px,7vw,112px);
@@ -46,7 +46,7 @@ a{color:inherit}
 .bar.hide{transform:translateY(-100%)}
 .bar.hide:focus-within{transform:none}
 .head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:16px;padding-block:clamp(20px,2.8vw,40px)}
-.mark{font-weight:400;font-size:18px;letter-spacing:.03em;text-decoration:none}
+.mark{font-family:var(--serif);font-weight:500;font-size:clamp(26px,2.6vw,36px);line-height:1;letter-spacing:.005em;text-decoration:none}
 .menu-btn{display:none;min-height:44px;font:350 16px var(--sans);letter-spacing:.03em;color:var(--ink);background:none;border:0;padding:4px 0;cursor:pointer}
 .nav{list-style:none;margin:0;padding:0;display:flex;gap:clamp(20px,3.2vw,52px)}
 .nav a{font-weight:350;font-size:16px;letter-spacing:.03em;color:var(--quiet);text-decoration:none;transition:color .2s}
@@ -60,9 +60,9 @@ a{color:inherit}
   #nav{display:none;flex-basis:100%}
   .head.open #nav{display:block;height:calc(100vh - 76px);height:calc(100svh - 76px);overflow-y:auto}
   .nav{flex-direction:column;gap:4px;padding-block:16px 32px}
-  .nav a{display:block;padding-block:8px;font-size:28px;font-weight:300}
+  .nav a{display:block;padding-block:6px;font-family:var(--serif);font-size:34px;font-weight:400;letter-spacing:0}
   .sub{position:static;opacity:1;visibility:visible;transform:none;display:grid;gap:0;min-width:0;padding:0 0 12px 20px;background:none}
-  .sub a{font-size:20px}
+  .sub a{font-size:25px}
 }
 
 /* Wand: Reihen gleicher Höhe, höchstens --rowmax hoch, zentriert */
@@ -81,7 +81,7 @@ html.js a.frame:hover img.loaded,html.js .cover-link:hover img.loaded{opacity:.9
 .ph figcaption,.cap{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-top:12px;font-size:13px;letter-spacing:.02em;color:var(--quiet)}
 .ph figcaption span:last-child{font-variant-numeric:tabular-nums;white-space:nowrap}
 .cover-link{display:block;text-decoration:none}
-.cover .c-title{font-size:17px;letter-spacing:.02em;color:var(--ink)}
+.cover .c-title{font-family:var(--serif);font-size:24px;font-weight:500;line-height:1.1;color:var(--ink)}
 .cover-link:hover .c-title{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
 
 /* Einblenden: nur was beim Laden unterhalb des Bildschirms liegt, einmalig, kurz */
@@ -107,14 +107,14 @@ html.js a.frame:hover img.loaded,html.js .cover-link:hover img.loaded{opacity:.9
   [data-hang="raster"] .wall--series .frame{aspect-ratio:var(--w) / var(--h)}
   [data-hang="raster"] .wall--series .frame img{inset:0;width:100%;height:100%;object-fit:cover}
   .wall .frame,.about .frame{width:calc(100% + 2 * var(--side));max-width:none;margin-inline:calc(-1 * var(--side))}
-  .cover .c-title{font-size:19px}
+  .cover .c-title{font-size:26px}
   .rv{transition-delay:0ms}
 }
 
 /* Serienkopf */
 .s-head{display:grid;gap:14px;max-width:46rem;margin-bottom:clamp(36px,5vw,72px)}
 .eyebrow{margin:0;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--quiet);font-variant-numeric:tabular-nums}
-.s-title,.p-title{margin:0;font-weight:300;font-size:clamp(34px,4.4vw,56px);line-height:1.08;letter-spacing:.005em;text-wrap:balance}
+.s-title,.p-title{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(44px,5.4vw,72px);line-height:1.02;text-wrap:balance}
 .s-intro{font-weight:300;font-size:clamp(17px,1.5vw,19px);line-height:1.6;color:var(--ink-2)}
 .s-intro p{margin:0 0 .6em}
 .s-intro p:last-child{margin-bottom:0}
@@ -129,14 +129,14 @@ html.js a.frame:hover img.loaded,html.js .cover-link:hover img.loaded{opacity:.9
 .pubs{margin-top:clamp(32px,4vw,56px)}
 .pubs li{display:grid;grid-template-columns:5.5rem minmax(0,1fr);gap:16px;padding-block:22px;border-top:1px solid var(--line)}
 .pubs .yr{font-weight:300;font-size:18px;color:var(--quiet);font-variant-numeric:tabular-nums}
-.pubs .mag{font-size:19px;letter-spacing:.01em}
+.pubs .mag{font-family:var(--serif);font-size:24px;font-weight:500;line-height:1.15}
 .pubs .mag a{text-decoration:none}
 .pubs .mag a:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
-.pubs .det{margin-top:4px;font-family:var(--serif);font-size:16px;color:var(--ink-2)}
+.pubs .det{margin-top:4px;font-size:15px;color:var(--ink-2)}
 .posts a{display:grid;grid-template-columns:9rem minmax(0,1fr);gap:6px 16px;padding-block:24px;border-top:1px solid var(--line);text-decoration:none}
 .posts .date{padding-top:6px;font-size:13px;color:var(--quiet)}
-.posts .pt{font-weight:350;font-size:clamp(20px,2vw,24px)}
-.posts .teaser{grid-column:2;font-family:var(--serif);font-size:16px;line-height:1.55;color:var(--ink-2)}
+.posts .pt{font-family:var(--serif);font-weight:500;font-size:clamp(25px,2.4vw,30px);line-height:1.15}
+.posts .teaser{grid-column:2;font-size:16px;line-height:1.6;color:var(--ink-2)}
 .posts a:hover .pt{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px}
 @media (max-width:640px){
   .posts a,.pubs li{grid-template-columns:1fr;gap:4px}
@@ -149,16 +149,18 @@ html.js a.frame:hover img.loaded,html.js .cover-link:hover img.loaded{opacity:.9
 .back{display:inline-block;margin-bottom:28px;padding-block:6px;font-size:14px;color:var(--quiet);text-decoration:none}
 .back:hover{color:var(--ink)}
 .article .date{margin:14px 0 36px;font-size:13px;color:var(--quiet)}
-.article .body p,.article .body li{font-family:var(--serif);font-size:clamp(17px,1.4vw,19px);line-height:1.72;color:var(--ink-2)}
+.article .body p,.article .body li{font-size:clamp(17px,1.3vw,18px);font-weight:380;line-height:1.75;color:var(--ink-2)}
 .article .body p{margin:0 0 1.2em}
-.article .body h2{margin:1.8em 0 .6em;font-weight:400;font-size:22px}
+.article .body h2{margin:1.6em 0 .5em;font-family:var(--serif);font-weight:500;font-size:30px;line-height:1.15}
 .article .body figure{margin:44px 0;max-width:28rem}
 
 /* Über mich */
-.about{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,4vw,64px);align-items:start;padding-top:clamp(8px,3vw,48px)}
+.about{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(24px,5vw,80px);align-items:start;padding-top:clamp(8px,3vw,48px)}
 .about figure{margin:0}
-.about h1{margin:0 0 18px;font-size:18px;font-weight:500;letter-spacing:.02em}
-.about-text p{margin:0 0 1em;font-family:var(--serif);font-size:17px;line-height:1.7;color:var(--ink-2)}
+.about figcaption{margin-top:10px;font-size:13px;letter-spacing:.02em;color:var(--quiet)}
+.about-text{max-width:36rem}
+.about h1{margin:0 0 20px;font-family:var(--serif);font-size:clamp(38px,3.6vw,48px);font-weight:400;line-height:1.05}
+.about-text p{margin:0 0 1em;font-size:17px;font-weight:380;line-height:1.75;color:var(--ink-2)}
 .contact{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 20px;margin:32px 0 0;padding-top:20px;border-top:1px solid var(--line);font-size:15px}
 .contact dt{color:var(--quiet)}
 .contact dd{margin:0;overflow-wrap:anywhere}
@@ -178,6 +180,7 @@ html.js a.frame:hover img.loaded,html.js .cover-link:hover img.loaded{opacity:.9
 .lb-hint{display:none}
 .lb-title{color:var(--ink)}
 .lb-close{min-height:44px;font:350 15px var(--sans);letter-spacing:.03em;color:var(--ink);background:none;border:0;padding:6px 0;cursor:pointer}
+.lb-close:focus-visible{outline:none;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px}
 .lb-stage{display:grid;grid-template-columns:48px minmax(0,1fr) 48px;align-items:center;gap:8px;min-height:0}
 .lb-img{justify-self:center;width:auto;height:auto;max-width:100%;max-height:calc(100vh - 160px);background:var(--mat);cursor:pointer;transition:opacity .25s ease}
 .lb-img.swap{opacity:0}

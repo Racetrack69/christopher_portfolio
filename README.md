@@ -25,7 +25,7 @@ Nur Web-Exporte hochladen, nie Originalscans.
    ```
    python3 tools/bilder.py ~/Export/kyoto.jpg --serie japan --name kyoto-torii --format 6x6
    ```
-   `--format` ist `6x6`, `6x9` oder `kb`. Bei 3:2 ist die Angabe nötig, weil 6×9 und Kleinbild
+   `--format` ist `6x45`, `6x6`, `6x7`, `6x9` oder `kb` (das Aufnahmeformat, auch bei beschnittenen Bildern). Bei 3:2 ist die Angabe nötig, weil 6×9 und Kleinbild
    gleich proportioniert sind. Das Skript erzeugt eine Datei mit 1600 px langer Kante
    (einstellbar über `bildgroesse` in `_config.yml`), entfernt alle Metadaten (auch GPS)
    und setzt nur Urheber und Copyright.

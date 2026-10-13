@@ -1,34 +1,32 @@
 ---
 layout: default
 title: Über mich
-description: Christopher Schmidtke fotografiert in Schwarzweiß auf Film, im Mittelformat 6×6 und 6×9 und auf Kleinbild.
+description: Christopher Schmidtke fotografiert seit etwa 2010 analog und fast immer in Schwarzweiß. Für ihn ist Film Handarbeit und Entschleunigung.
 permalink: /ueber-mich/
-bild: /assets/images/ueber-mich/portrait.jpg
+bild: /assets/images/ueber-mich/christopher-schmidtke.jpg
 portrait:
-  w: 1600
-  h: 1067
-  alt: "Platzhalter für ein Porträt"
+  w: 1200
+  h: 1500
+  alt: "Christopher Schmidtke blickt von oben in den Lichtschachtsucher seiner Mamiya 645, im Hintergrund unscharf Berge und Bäume."
 ---
 {%- assign pt = page.portrait -%}
 <div class="about">
   <figure>
-    <span class="frame" style="--w:{{ pt.w }};--h:{{ pt.h }}">{% include img.html base="/assets/images/ueber-mich/portrait" bild=pt alt=pt.alt eager=true %}</span>
+    <span class="frame" style="--w:{{ pt.w }};--h:{{ pt.h }}">{% include img.html base="/assets/images/ueber-mich/christopher-schmidtke" bild=pt alt=pt.alt eager=true %}</span>
+    {%- if pt.credit and pt.credit != "" %}
+    <figcaption>Foto: {{ pt.credit }}</figcaption>
+    {%- endif %}
   </figure>
   <div class="about-text">
     <h1>Über mich</h1>
-    <p>Ich fotografiere in Schwarzweiß und auf Film, im Mittelformat 6×6 und 6×9, unterwegs auch auf Kleinbild. [Seit wann, und wie du dazu gekommen bist.]</p>
-    <p>Meine Serien entstehen auf Reisen, bisher in Japan, Skandinavien und den USA. Dazu kommt eine Serie in Infrarot. [Was dich an einem Motiv interessiert, worauf du achtest.]</p>
+    <p>Ich fotografiere seit etwa 2010 analog. Angefangen hat es mit einer alten Minolta, und seitdem bin ich immer tiefer eingetaucht, erst ins Mittelformat und irgendwann auch in die Dunkelkammer.</p>
+    <p>Analoge Fotografie ist für mich Handarbeit und Entschleunigung. Jeder Film will eingelegt, jede Belichtung überlegt sein. Man sieht nicht sofort, was man bekommt, vieles passiert im Kopf, und manchmal dauert es eine ganze Weile, bis ich weiß, ob ein Bild etwas geworden ist.</p>
+    <p>Unachtsamkeit wird dabei schnell teuer. Doppelbelichtungen, die nicht als Kunst gedacht waren, ein Film, der einfach nicht weiterspulen wollte, Lichteinfall durch undichte Stellen und die eine oder andere verpatzte Entwicklung. Auch das gehört dazu, und mit jedem Fehler schaut man etwas genauer hin.</p>
+    <p>Das perfekte Ergebnis ist mir weniger wichtig als die Reise dahin. Fotografieren ist für mich ein stetiger Prozess, vom Blick durch den Sucher über die Entwicklung bis zum fertigen Abzug auf gutem Barytpapier.</p>
+    <p>Und es hat seinen Reiz, etwas wirklich auf Film zu bannen. Ein Negativ kann man in die Hand nehmen, gegen das Licht halten und auch in zwanzig Jahren noch vergrößern. Dazu kommen die Kameras selbst, von denen einige über 60 Jahre alt sind und noch immer zuverlässig ihren Dienst tun.</p>
     <p>Veröffentlichungen in Magazinen sind unter <a href="{{ '/veroeffentlichungen/' | relative_url }}">Veröffentlichungen</a> gesammelt, Gedanken zur analogen Fotografie im <a href="{{ '/journal/' | relative_url }}">Journal</a>.</p>
     <dl class="contact">
-      {%- if site.author.email != "" %}
-      <dt>E-Mail</dt><dd><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></dd>
-      {%- endif %}
-      {%- if site.author.instagram != "" %}
-      <dt>Instagram</dt><dd><a href="https://www.instagram.com/{{ site.author.instagram }}/" rel="me noopener">@{{ site.author.instagram }}</a></dd>
-      {%- endif %}
-      {%- if site.author.email == "" and site.author.instagram == "" %}
-      <dt>Kontakt</dt><dd>[E-Mail und Instagram in _config.yml eintragen]</dd>
-      {%- endif %}
+      <dt>Im Einsatz</dt><dd>Mamiya M645 1000S, Rolleiflex 2.8C, Minolta XD-7</dd>
     </dl>
   </div>
 </div>

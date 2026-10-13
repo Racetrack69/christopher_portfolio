@@ -68,18 +68,26 @@ def nach_srgb(im):
     return im, ziel.tobytes()
 
 
+# Typische Seitenverhältnisse der Filmformate (lange : kurze Seite)
+TYPISCH = {"6x45": (1.333, 1.35), "6x6": (1.0,), "6x7": (1.167, 1.24), "6x9": (1.5,), "kb": (1.5,)}
+
+
 def format_raten(w, h, vorgabe):
     verhaeltnis = max(w, h) / min(w, h)
+    if vorgabe:
+        if not any(abs(verhaeltnis - t) < 0.03 for t in TYPISCH[vorgabe]):
+            print(f"  Hinweis: Seitenverhältnis {verhaeltnis:.2f} ist für {vorgabe} untypisch (beschnitten?). Format bleibt {vorgabe}.")
+        return vorgabe
     if abs(verhaeltnis - 1) < 0.02:
-        if vorgabe and vorgabe != "6x6":
-            print(f"  Hinweis: Bild ist quadratisch, --format {vorgabe} trotzdem übernommen")
-        return vorgabe or "6x6"
+        return "6x6"
     if abs(verhaeltnis - 1.5) < 0.03:
-        if vorgabe in ("6x9", "kb"):
-            return vorgabe
         return "6x9 oder kb"
-    print(f"  Hinweis: Seitenverhältnis {verhaeltnis:.2f} ist weder 1:1 noch 3:2 (beschnitten?)")
-    return vorgabe or "?"
+    if any(abs(verhaeltnis - t) < 0.03 for t in TYPISCH["6x7"]):
+        return "6x7"
+    if any(abs(verhaeltnis - t) < 0.02 for t in TYPISCH["6x45"]):
+        return "6x45"
+    print(f"  Hinweis: Seitenverhältnis {verhaeltnis:.2f} passt zu keinem Filmformat (beschnitten?). Bitte --format angeben.")
+    return "?"
 
 
 def verarbeiten(quelle, serie, name, vorgabe_format, autor, groesse_px):
@@ -92,8 +100,9 @@ def verarbeiten(quelle, serie, name, vorgabe_format, autor, groesse_px):
     w, h = im.size
     lang = max(w, h)
     if lang < groesse_px:
-        print(f"  ÜBERSPRUNGEN: lange Kante {lang} px. Bitte mit mindestens {groesse_px} px exportieren.")
-        return None
+        print(f"  ACHTUNG: lange Kante nur {lang} px (Ziel {groesse_px} px). Das Bild wird nicht vergrößert")
+        print(f"           und kann auf großen Bildschirmen weich wirken. Besser neu exportieren.")
+        groesse_px = lang
 
     faktor = groesse_px / lang
     neu = (round(w * faktor), round(h * faktor))
@@ -122,7 +131,7 @@ def main():
     ap.add_argument("dateien", nargs="+", help="exportierte Bilddateien (JPEG oder TIFF)")
     ap.add_argument("--serie", required=True, help="Ordnername der Serie, z. B. japan")
     ap.add_argument("--name", help="Dateiname ohne Endung (nur bei einer Datei). Standard: aus dem Dateinamen")
-    ap.add_argument("--format", choices=["6x6", "6x9", "kb"], help="Filmformat. Nötig bei 3:2, weil 6×9 und Kleinbild gleich proportioniert sind")
+    ap.add_argument("--format", choices=sorted(TYPISCH), help="Filmformat (Aufnahmeformat, auch bei beschnittenen Bildern). Nötig bei 3:2, weil 6×9 und Kleinbild gleich proportioniert sind")
     ap.add_argument("--autor", default=AUTOR)
     args = ap.parse_args()
 
