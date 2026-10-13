@@ -21,7 +21,7 @@ bilder:
     h: 1129
     ort: ""
     jahr: ""
-    kamera: ""
+    kamera: "Mamiya M645 1000S"
     film: "Ilford HP5 Plus"
     alt: "Ein runder Berg mit einem großen, zerklüfteten Schneefeld unter tief hängenden Wolken, davor kahle, zerfurchte Felsrücken mit einzelnen Schneeresten. Um das Bild der schwarze Filmrand."
   - datei: skandinavien-hafenkanal
@@ -30,7 +30,7 @@ bilder:
     h: 1104
     ort: "Ålesund"
     jahr: ""
-    kamera: ""
+    kamera: "Mamiya M645 1000S"
     film: "Ilford HP5 Plus"
     alt: "Ein schmaler Hafenkanal in Ålesund zwischen hellen Häusern mit Spitzgiebeln, im ruhigen Wasser spiegeln sich Häuser und Wolken, rechts ein kleines Boot an einem Steg vor einer Kaimauer. Um das Bild der schwarze Filmrand."
   - datei: skandinavien-ubahn-rolltreppen
@@ -39,8 +39,8 @@ bilder:
     h: 1501
     ort: "Stockholm"
     jahr: ""
-    kamera: ""
+    kamera: "Minolta XD-7"
     film: "Ilford HP5 Plus"
     alt: "Eine U-Bahn-Station in Stockholm, in den Fels gehauen: Unter der rauen Felsdecke führen hell beleuchtete Rolltreppen nach oben, im Vordergrund geht eine Person verwischt über den glänzenden Boden. Um das Bild der Kleinbildfilm mit Perforation und Aufdruck."
 ---
-Ein Fjord mit Wasserfällen, ein Berg mit Schneefeld unter tiefen Wolken, ein Hafenkanal in Ålesund und eine U-Bahn-Station tief im Fels unter Stockholm.
+Zwei Roadtrips, zwei Kameras: die Mamiya 645 und die Minolta XD-7. Auf solchen Reisen erlebt man so wahnsinnig viel, dass am Ende nur ein Bruchteil davon auf Film landet. Dieser Bruchteil reicht vom Fjord mit seinen Wasserfällen bis tief in den Fels unter Stockholm.

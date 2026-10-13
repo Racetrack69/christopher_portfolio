@@ -9,7 +9,7 @@ Dort klappe ich den Lichtschacht auf und schaue von oben auf die Mattscheibe. Di
 
 {% include beitragsbild.html serie="journal" datei="rolleiflex-lichtschacht-fluss" w="1600" h="1600" alt="Blick von oben in den aufgeklappten Lichtschacht einer Rolleiflex 2.8C, die in der Hand gehalten wird. Auf der Mattscheibe ein Bach, der sich zwischen Büschen durch ein Bergtal schlängelt, drumherum unscharf grüne Wiese, ein roter Jackenärmel und Beine in Jeans." text="Rolleiflex 2.8C" %}
 
-Dann wird aufgebaut. Stativbeine ausziehen, Kamera ausrichten, Drahtauslöser anschrauben. Und warten, bis das Licht passt oder eine Wolke weiterzieht. Manchmal dauert das ein paar Minuten, manchmal kommt der Moment gar nicht. Ich mag das trotzdem, vielleicht gerade deshalb. Entschleunigung pur.
+Dann wird aufgebaut. Stativbeine ausziehen, Kamera ausrichten, Drahtauslöser anschrauben. Und warten, bis das Licht passt oder eine Wolke weiterzieht. Manchmal geht das schnell, manchmal nicht, und manchmal verpasse ich den Moment auch. Das gehört dazu. Entschleunigung pur.
 
 {% include beitragsbild.html serie="journal" datei="mamiya-645-shift-stativ" w="1600" h="900" alt="Eine Mamiya M645 1000S mit Shift-Objektiv und Drahtauslöser auf einem Stativ, dahinter unscharf eine Berglandschaft mit See und hellen Felsplatten unter grauem Himmel." text="Mamiya M645 1000S mit Shift-Objektiv" %}
 
@@ -30,8 +30,8 @@ Weil ich das Ergebnis nicht sofort sehe, muss das Bild vorher im Kopf entstehen.
 Ich fotografiere auch digital. Das ist schneller und unruhiger, man macht mehr Bilder, und auch das hat seinen Reiz. Die Bilder meiner Kinder entstehen meistens digital. Beides hat seinen Platz. Aber nur mit Film in der Kamera zähle ich mit.
 
 <div class="paar">
-{% include beitragsbild.html serie="journal" datei="mamiya-645-weitwinkel-see" w="900" h="1600" alt="Eine Mamiya M645 1000S mit 45-mm-Objektiv von oben in der Hand, im Lichtschacht ein Waldsee, dessen Ufer mit Nadelbäumen sich im Wasser spiegelt. Darunter unscharf Fels." text="Mamiya M645 1000S mit Weitwinkel" %}
-{% include beitragsbild.html serie="journal" datei="mamiya-645-tele-gipfel" w="1066" h="1600" alt="Eine Mamiya M645 1000S mit langem Objektiv von oben, auf der Mattscheibe ein einzelner, von der Seite beleuchteter Berggipfel. Der Hintergrund ist völlig unscharf." text="Mit langem Objektiv" %}
+{% include beitragsbild.html serie="journal" datei="mamiya-645-weitwinkel-see" w="900" h="1600" alt="Eine Mamiya M645 1000S mit 45-mm-Sekor-Objektiv von oben in der Hand, im Lichtschacht ein Waldsee, dessen Ufer mit Nadelbäumen sich im Wasser spiegelt. Darunter unscharf Fels." text="Mamiya M645 1000S mit Sekor 45 mm" %}
+{% include beitragsbild.html serie="journal" datei="mamiya-645-tele-gipfel" w="1066" h="1600" alt="Eine Mamiya M645 1000S mit 150-mm-Sekor-Objektiv von oben, auf der Mattscheibe ein einzelner, von der Seite beleuchteter Berggipfel. Der Hintergrund ist völlig unscharf." text="und mit Sekor 150 mm" %}
 </div>
 
 ## Mit Abstand

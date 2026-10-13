@@ -28,11 +28,11 @@ bilder:
     format: 6x6
     w: 1600
     h: 1600
-    ort: ""
+    ort: "Joshua Tree National Park"
     jahr: ""
     kamera: ""
     film: "Ilford FP4 Plus"
-    alt: "Ein einzelner Joshua Tree mit stacheligen Blattbüscheln an verzweigten Ästen, dahinter ein flacher, steiniger Hügel und ein Himmel voller fein gezogener Schleierwolken. Um das Bild der schwarze Filmrand."
+    alt: "Ein einzelner Joshua Tree im Joshua Tree National Park mit stacheligen Blattbüscheln an verzweigten Ästen, dahinter ein flacher, steiniger Hügel und ein Himmel voller fein gezogener Schleierwolken. Um das Bild der schwarze Filmrand."
   - datei: usa-tankstelle
     format: kb
     w: 1600
@@ -88,4 +88,6 @@ bilder:
     film: ""
     alt: "Ein gerader Schotterweg führt in den Alabama Hills durch dunkles Buschland auf eine Felsgruppe und eine helle, schneebedeckte Bergkette zu."
 ---
-Die Alabama Hills bieten einfach fantastische Lichtsituationen, und die Weite ist jedes Mal atemberaubend. Meine Favoriten sind aber die Joshua Trees und die Dünen mit ihren abstrakten Formen.
+Ich liebe einfach die Wüste. Auf jedem Roadtrip durch den Westen der USA ist der Joshua Tree National Park mein Highlight, wegen der Form dieser Bäume und weil sie mitten in der Wüste stehen. Die Alabama Hills sind auch wirklich cool, am besten vor Sonnenaufgang, wenn das Licht langsam über die Felsen kommt. Und dann die Dünen mit ihren abstrakten Formen.
+
+Ein paar der schönsten Negative aus Amerika haben es übrigens nie hierher geschafft. Luftblasen in der Entwicklerdose. Auch das gehört dazu.
