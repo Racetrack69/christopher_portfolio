@@ -1,0 +1,33 @@
+---
+layout: default
+title: Impressum
+description: Impressum der Website von Christopher Schmidtke.
+permalink: /impressum/
+noindex: true
+sitemap: false
+---
+{%- comment -%}
+  Name, Anschrift und E-Mail kommen aus _config.yml (author, anschrift).
+  Die E-Mail erscheint nur, wenn sie dort eingetragen ist.
+{%- endcomment -%}
+{%- assign name = site.author.name -%}
+{%- assign mail = site.author.email | strip -%}
+<article class="article legal">
+  <h1 class="p-title">Impressum</h1>
+  <div class="body">
+    <h2>Angaben nach § 18 Abs. 1 MStV</h2>
+    <address>
+      {{ name }}<br>
+      {{ site.anschrift.strasse }}<br>
+      {{ site.anschrift.ort }}
+    </address>
+    {%- if mail != "" %}
+    <h2>Kontakt</h2>
+    <p>E-Mail: <a href="mailto:{{ mail }}">{{ mail }}</a></p>
+    {%- endif %}
+    <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+    <p>{{ name }}, Anschrift wie oben</p>
+    <h2>Urheberrecht</h2>
+    <p>Alle Fotografien und Texte auf dieser Website stammen von {{ name }} und sind urheberrechtlich geschützt. Eine Verwendung ist nur mit vorheriger Zustimmung erlaubt.</p>
+  </div>
+</article>

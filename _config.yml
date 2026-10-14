@@ -21,15 +21,21 @@ locale: de_DE
 
 author:
   name: Christopher Schmidtke
-  email: ""          # z. B. hallo@deine-domain.de
+  email: ""          # erst eintragen, wenn das Postfach funktioniert, z. B. kontakt@christopherschmidtke.de
+                     # erscheint dann automatisch in Impressum und Datenschutzerklärung
   instagram: ""      # nur der Name, ohne @
+
+# Anschrift für Impressum und Datenschutzerklärung
+anschrift:
+  strasse: Elsavastraße 36
+  ort: 63863 Eschau
 
 # Suchmaschinen: false = alle Seiten tragen "noindex" (Testphase).
 # Auf true stellen, sobald Bilder, Texte und Domain stehen.
 indexierung: false
 
-# Impressum und Datenschutz im Footer verlinken (mit eigener Domain auf true)
-rechtliches: false
+# Impressum und Datenschutz im Footer verlinken
+rechtliches: true
 
 # Desktop-Hängung der Serien: reihen | raster | einzeln
 # Auf dem Handy gibt es immer eine Spalte.

@@ -95,12 +95,16 @@ nach `_posts/` verschieben und das Datum vorne an den Dateinamen setzen.
 
 - Die Adresse der Seite setzt GitHub automatisch, auch später mit eigener Domain. `url` und
   `baseurl` deshalb nicht eintragen
-- `author.email`, `author.instagram`: erscheinen auf „Über mich“
+- `author.email`: erscheint in Impressum und Datenschutzerklärung, sobald eingetragen. Erst
+  eintragen, wenn das Postfach funktioniert
+- `author.instagram`: wird in den strukturierten Daten mit der Person verknüpft
+- `anschrift`: Straße und Ort für Impressum und Datenschutzerklärung
 - `haengung`: `reihen`, `raster` oder `einzeln` (nur Desktop, am Handy immer eine Spalte)
 - `bildgroesse`: lange Kante der Bilder in Pixel (Standard 1600). Nach einer Änderung alle Bilder
   mit `tools/bilder.py` neu erzeugen
 - `indexierung`: `false` in der Testphase. Auf `true` stellen, wenn Bilder, Texte und Domain stehen
-- `rechtliches`: auf `true`, sobald `impressum.md` und `datenschutz.md` angelegt sind
+- `rechtliches`: `true` blendet die Links zu Impressum und Datenschutz im Fußbereich ein.
+  Die Texte liegen in `impressum.html` und `datenschutz.html`
 
 ## Einmalig: auf GitHub Pages veröffentlichen
 
@@ -126,11 +130,15 @@ Nach dem ersten Upload muss nie wieder alles hochgeladen werden, nur was sich ge
    GitHub über die Datei, dann oben rechts „…“ → „Delete file“. Dateien, die dort als „kann weg“
    markiert sind, stören nicht, wenn sie liegen bleiben.
 
-## Später: eigene Domain
+## Eigene Domain
 
-Domain unter Settings → Pages eintragen und beim Domain-Anbieter die DNS-Einträge nach der
-GitHub-Anleitung setzen. Die Adresse übernimmt die Seite automatisch. Danach in `_config.yml`
-`indexierung: true` und `rechtliches: true` setzen.
+Die Seite läuft unter `https://christopherschmidtke.de` (Domain bei INWX, HTTPS über GitHub).
+
+- Die Datei `CNAME` im Repository gehört zur Domain. Nicht löschen.
+- Bei INWX stehen: vier A-Einträge auf die GitHub-Adressen, ein CNAME `www` auf
+  `racetrack69.github.io.` und ein TXT-Eintrag `_github-pages-challenge-racetrack69` für die
+  Verifizierung bei GitHub. Alle stehen lassen, NS- und SOA-Einträge ebenfalls.
+- Wenn die Seite gefunden werden soll: in `_config.yml` `indexierung: true` setzen.
 
 ## Lokale Vorschau (optional)
 

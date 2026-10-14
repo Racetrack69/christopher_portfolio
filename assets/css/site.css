@@ -170,6 +170,13 @@ html.js a.frame:hover img.loaded,html.js .cover-link:hover img.loaded{opacity:.9
 .article .body figure{--fw:min(52rem, calc(100vw - 2 * var(--side)), calc(52vh * var(--r,1)));width:var(--fw);margin:clamp(32px,4vw,48px) calc((100% - var(--fw)) / 2)}
 .article .body .paar{display:flex;gap:clamp(12px,1.6vw,20px);align-items:flex-start;margin:clamp(32px,4vw,48px) 0}
 .article .body .paar figure{flex:var(--r) 1 0;min-width:0;width:auto;margin:0}
+.article .body address{margin:0 0 1.2em;font-style:normal;font-size:clamp(17px,1.3vw,18px);font-weight:380;line-height:1.75;color:var(--ink-2)}
+
+/* Impressum und Datenschutz: gleiche Spalte wie ein Beitrag, ohne Zurück-Link und Datum */
+.legal .stand{margin:14px 0 0;font-size:13px;color:var(--quiet)}
+.legal .body{margin-top:clamp(28px,3vw,40px)}
+.legal .body>h2:first-child{margin-top:0}
+.legal .body a{overflow-wrap:anywhere}
 
 /* Über mich */
 .about{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(24px,5vw,80px);align-items:start;padding-top:clamp(8px,3vw,48px)}
