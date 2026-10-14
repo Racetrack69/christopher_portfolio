@@ -49,7 +49,15 @@ a{color:inherit}
 .bar.hide{transform:translateY(-100%)}
 .bar.hide:focus-within{transform:none}
 .head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:16px;padding-block:clamp(20px,2.8vw,40px)}
-.mark{font-family:var(--serif);font-weight:500;font-size:clamp(28px,3vw,42px);line-height:1;letter-spacing:.005em;text-decoration:none}
+.mark-h1{margin:0;font:inherit}
+.mark{--name:clamp(28px,3vw,42px);display:flex;flex-direction:column;align-items:flex-start;font-family:var(--serif);font-weight:500;font-size:var(--name);line-height:1;letter-spacing:.005em;text-decoration:none}
+/* Unterzeile unter dem Namen, sichtbar genau so breit wie der Name (von der Kante des C bis zur Kante des e).
+   Die Laufweite (--sperrung) wird aus beiden Schriftgrößen errechnet:
+   9.227em = sichtbare Breite von „Christopher Schmidtke“ in Cormorant Garamond 500 (mit Laufweite .005em),
+   19.061em = sichtbare Breite der Unterzeile ohne Laufweite in Jost 400, Großbuchstaben,
+   32 = Zahl der Zeichen der Unterzeile minus 1 (ß zählt als SS), .04em = Abstand vor dem C.
+   Ändern sich Name oder Unterzeile, diese Werte neu messen, sonst stimmt die Breite nicht mehr genau. */
+.mark-sub{--sub:clamp(10.5px,3.5px + .75vw,14px);--sperrung:calc((var(--name) * 9.227 - var(--sub) * 19.061) / 32);margin:clamp(9px,.9vw,14px) calc(var(--sperrung) * -1) 0 calc(var(--name) * .04);font-family:var(--sans);font-weight:400;font-size:var(--sub);line-height:1.2;letter-spacing:var(--sperrung);white-space:nowrap;text-transform:uppercase;color:var(--quiet)}
 .menu-btn{display:none;min-height:44px;font:350 16px var(--sans);letter-spacing:.03em;color:var(--ink);background:none;border:0;padding:4px 0;cursor:pointer}
 .nav{list-style:none;margin:0;padding:0;display:flex;gap:clamp(20px,3.2vw,52px)}
 .nav a{font-weight:350;font-size:16px;letter-spacing:.03em;color:var(--quiet);text-decoration:none;transition:color .2s}
@@ -57,10 +65,9 @@ a{color:inherit}
 /* Die Serienliste steht am Desktop als eigene Zeile auf den Serienseiten (.s-nav), nur das Handymenü zeigt sie */
 .sub{display:none;list-style:none;margin:0}
 @media (max-width:760px){
-  .head{align-items:center}
   .menu-btn{display:block}
   #nav{display:none;flex-basis:100%}
-  .head.open #nav{display:block;height:calc(100vh - 76px);height:calc(100svh - 76px);overflow-y:auto}
+  .head.open #nav{display:block;height:calc(100vh - 110px);height:calc(100svh - 110px);overflow-y:auto}
   .nav{flex-direction:column;gap:4px;padding-block:16px 32px}
   .nav a{display:block;padding-block:6px;font-family:var(--serif);font-size:34px;font-weight:400;letter-spacing:0}
   .sub{display:grid;gap:0;padding:0 0 12px 20px}
@@ -69,9 +76,8 @@ a{color:inherit}
 
 /* Wand: Reihen gleicher Höhe, höchstens --rowmax hoch, zentriert */
 .lede{margin:0 0 clamp(28px,4vw,56px);max-width:40rem;font-weight:300;font-size:clamp(17px,1.5vw,19px);line-height:1.6;color:var(--ink-2)}
-/* Startseite: Überschrift in der Serifenschrift, darunter ein kurzer Text wie eine Tafel am Eingang */
+/* Startseite: kurzer Text wie eine Tafel am Eingang, ohne eigene Überschrift (die steht im Kopf) */
 .home-head{max-width:36rem;margin:0 0 clamp(48px,6vw,96px)}
-.home-title{margin:0 0 14px;font-family:var(--serif);font-weight:400;font-size:clamp(26px,2.4vw,34px);line-height:1.1}
 .intro{margin:0;font-weight:300;font-size:clamp(17px,1.4vw,19px);line-height:1.7;color:var(--ink-2);text-wrap:pretty}
 .wall{display:flex;flex-direction:column;gap:var(--row-gap)}
 .wall .row{display:flex;gap:var(--gap);align-items:flex-start;margin-inline:auto;width:min(100%, calc(var(--sum) * var(--rowmax) + (var(--n) - 1) * var(--gap)))}
@@ -121,7 +127,7 @@ html.js a.frame:hover img.loaded,html.js .cover-link:hover img.loaded{opacity:.9
 
 /* Serienkopf */
 /* Ziffern in der Serifenschrift auf Linie (Cormorant setzt sonst Mediävalziffern, 2010 sähe aus wie 2o1o) */
-.mark,.home-title,.s-title,.p-title,.about h1,.article .body h2,.posts .pt,.pubs .mag,.cover .c-title{font-variant-numeric:lining-nums}
+.mark,.s-title,.p-title,.about h1,.article .body h2,.posts .pt,.pubs .mag,.cover .c-title{font-variant-numeric:lining-nums}
 
 /* Seitentitel bewusst kleiner als der Name im Kopf */
 .s-head{display:grid;gap:14px;max-width:46rem;margin-bottom:clamp(44px,6vw,88px)}
