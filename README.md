@@ -67,9 +67,15 @@ Datei `_posts/JJJJ-MM-TT-titel.md` anlegen:
 ---
 title: Titel des Beitrags
 description: Ein Satz, worum es geht (erscheint in der Liste und bei Google).
+bild: /assets/images/journal/rolleiflex-oben.jpg              # optional: Link-Vorschau
+listenbild: /assets/images/journal/klein/rolleiflex-oben.jpg  # optional: kleines Bild in der Liste
 ---
 Text in Markdown …
 ```
+
+`bild` erscheint in Link-Vorschauen (WhatsApp usw.). Das kleine quadratische Bild in der
+Journal-Liste und auf der Startseite ist `listenbild` (400 × 400 px, in `assets/images/journal/klein/`).
+Fehlt `listenbild`, wird `bild` verkleinert angezeigt. Fehlt beides, steht der Eintrag ohne Bild da.
 
 Bilder für Beiträge liegen in `assets/images/journal/`. Vorbereiten wie Serienbilder, nur mit
 `--serie journal`. Das Skript gibt dann die fertige Zeile für den Beitrag aus:

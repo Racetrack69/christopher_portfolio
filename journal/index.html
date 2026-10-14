@@ -10,15 +10,7 @@ permalink: /journal/
   {%- if site.posts.size > 0 %}
   <ul class="posts">
     {%- for post in site.posts %}
-    <li>
-      <a href="{{ post.url | relative_url }}">
-        <span class="date">{% include datum.html datum=post.date %}</span>
-        <span class="pt">{{ post.title }}</span>
-        {%- if post.description %}
-        <span class="teaser">{{ post.description }}</span>
-        {%- endif %}
-      </a>
-    </li>
+    {% include beitrag-eintrag.html post=post %}
     {%- endfor %}
   </ul>
   {%- else %}

@@ -35,15 +35,7 @@ layout: default
   <h2 class="mini" id="hj">Aus dem Journal</h2>
   <ul class="posts">
     {%- for post in site.posts limit: 2 %}
-    <li>
-      <a href="{{ post.url | relative_url }}">
-        <span class="date">{% include datum.html datum=post.date %}</span>
-        <span class="pt">{{ post.title }}</span>
-        {%- if post.description %}
-        <span class="teaser">{{ post.description }}</span>
-        {%- endif %}
-      </a>
-    </li>
+    {% include beitrag-eintrag.html post=post %}
     {%- endfor %}
   </ul>
 </section>

@@ -2,6 +2,7 @@
 title: Durch den Lichtschacht
 description: Warum ich schwere Kameras auf Berge trage, auf Reisen Bilder zähle und Filme manchmal monatelang liegen lasse.
 bild: /assets/images/journal/rolleiflex-lichtschacht-fluss.jpg
+listenbild: /assets/images/journal/klein/rolleiflex-lichtschacht-fluss.jpg
 ---
 Jedes Mal ist es ein kleiner Akt. Der Rucksack ist schwer, das Stativ auch, und irgendwo auf halber Höhe frage ich mich, warum ich das eigentlich mache. Die Antwort gibt es erst oben.
 

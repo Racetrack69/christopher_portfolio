@@ -1,0 +1,21 @@
+{%- comment -%}
+  Ein Eintrag in den Beitragslisten (Journal und Startseite). Parameter: post
+  Kleines Bild links: "listenbild" aus dem Beitrag, sonst "bild". Ohne beides bleibt der Platz frei,
+  damit alle Texte auf derselben Linie beginnen.
+{%- endcomment -%}
+{%- assign p = include.post -%}
+{%- assign lb = p.listenbild | default: p.bild -%}
+<li>
+  <a href="{{ p.url | relative_url }}">
+    {%- if lb %}
+    <span class="thumb"><img src="{{ lb | relative_url }}" alt="" width="400" height="400" loading="lazy" decoding="async"></span>
+    {%- endif %}
+    <span class="txt">
+      <span class="date">{% include datum.html datum=p.date %}</span>
+      <span class="pt">{{ p.title }}</span>
+      {%- if p.description %}
+      <span class="teaser">{{ p.description }}</span>
+      {%- endif %}
+    </span>
+  </a>
+</li>
