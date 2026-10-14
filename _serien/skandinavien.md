@@ -13,7 +13,7 @@ bilder:
     h: 1600
     ort: "Geirangerfjord"
     jahr: ""
-    kamera: ""
+    kamera: "Rolleiflex"
     film: "Ilford HP5 Plus"
     alt: "Blick von oben in den Geirangerfjord zwischen steilen, bewaldeten Felswänden, rechts stürzen schmale Wasserfälle den Hang hinab, auf dem dunklen Wasser ein kleines Schiff. Um das Bild der schwarze Filmrand."
   - datei: skandinavien-schneefeld-berg
@@ -62,4 +62,4 @@ bilder:
     film: "Ilford HP5 Plus"
     alt: "Eine U-Bahn-Station in Stockholm, in den Fels gehauen: Unter der rauen Felsdecke führen hell beleuchtete Rolltreppen nach oben, im Vordergrund geht eine Person verwischt über den glänzenden Boden. Um das Bild der Kleinbildfilm mit Perforation und Aufdruck."
 ---
-Zwei Roadtrips, zwei Kameras: die Mamiya 645 und die Minolta XD-7. Auf solchen Reisen erlebt man so wahnsinnig viel, dass am Ende nur ein Bruchteil davon auf Film landet. Dieser Bruchteil reicht vom Fjord mit seinen Wasserfällen bis tief in den Fels unter Stockholm.
+Zwei Roadtrips, drei Kameras: die Mamiya 645, die Minolta XD-7 und natürlich die Rolleiflex. Beeindruckt haben mich vor allem die endlosen Weiten und die Natur. In Norwegen liegt ganz unten in einem Hochtal ein dunkler See, in Schweden schiebt sich ein Fluss zwischen flachen Felsplatten hindurch, links und rechts nur Wald. Auf solchen Reisen erlebt man so wahnsinnig viel, dass am Ende nur ein Bruchteil davon auf Film landet. Dieser Bruchteil reicht vom Fjord mit seinen Wasserfällen bis tief in den Fels unter Stockholm.
