@@ -30,9 +30,9 @@ anschrift:
   strasse: Elsavastraße 36
   ort: 63863 Eschau
 
-# Suchmaschinen: false = alle Seiten tragen "noindex" (Testphase).
-# Auf true stellen, sobald Bilder, Texte und Domain stehen.
-indexierung: false
+# Suchmaschinen: true = Seiten dürfen in Google, Bing usw. erscheinen.
+# false = alle Seiten tragen "noindex". Impressum, Datenschutz und 404 bleiben immer noindex.
+indexierung: true
 
 # Impressum und Datenschutz im Footer verlinken
 rechtliches: true
@@ -45,8 +45,9 @@ haengung: reihen
 # Nach einer Änderung die Bilder mit tools/bilder.py neu erzeugen.
 bildgroesse: 1600
 
-# Vorschaubild für Link-Vorschauen auf Seiten ohne eigenes Bild
-og_bild: /assets/images/infrarot/infrarot-schiefer-baum.jpg
+# Vorschaubild für Link-Vorschauen auf Seiten ohne eigenes Bild (Startseite, Journal, ...)
+# Ideal 1200 × 630 px. Serienseiten nutzen ihr Titelbild, Beiträge ihr "bild".
+og_bild: /assets/images/vorschau/start-mamiya-stativ.jpg
 
 # ------------------------------------------------------------
 # Inhalte

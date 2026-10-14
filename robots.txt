@@ -3,8 +3,22 @@ layout: null
 permalink: /robots.txt
 sitemap: false
 ---
+# Suchmaschinen und KI-Suche (z. B. OAI-SearchBot, Claude-SearchBot) sind erlaubt.
 User-agent: *
 Allow: /
+
+# KI-Training ist nicht erlaubt.
+# OpenAI (Training)
+User-agent: GPTBot
+Disallow: /
+
+# Anthropic (Training)
+User-agent: ClaudeBot
+Disallow: /
+
+# Google (Gemini-Training, hat laut Google keinen Einfluss auf die Google-Suche)
+User-agent: Google-Extended
+Disallow: /
 {% if site.indexierung %}
 Sitemap: {{ '/sitemap.xml' | absolute_url }}
 {% endif %}

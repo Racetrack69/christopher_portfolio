@@ -14,6 +14,8 @@ Nur Web-Exporte hochladen, nie Originalscans.
 | `_posts/` | Journal-Beiträge als Markdown. Entwürfe liegen in `_drafts/` |
 | `_data/veroeffentlichungen.yml` | Liste der Magazin-Veröffentlichungen |
 | `assets/images/<serie>/` | Bilddateien, erzeugt von `tools/bilder.py` |
+| `assets/images/vorschau/` | Vorschaubilder für Link-Vorschauen (1200 × 630 px) |
+| `robots.txt` | Regeln für Suchmaschinen und KI-Crawler |
 | `_config.yml` | Name, Adresse, Kontakt, Hängung, Suchmaschinen |
 | `tools/bilder.py` | Bereitet Exporte für die Seite vor |
 
@@ -102,7 +104,12 @@ nach `_posts/` verschieben und das Datum vorne an den Dateinamen setzen.
 - `haengung`: `reihen`, `raster` oder `einzeln` (nur Desktop, am Handy immer eine Spalte)
 - `bildgroesse`: lange Kante der Bilder in Pixel (Standard 1600). Nach einer Änderung alle Bilder
   mit `tools/bilder.py` neu erzeugen
-- `indexierung`: `false` in der Testphase. Auf `true` stellen, wenn Bilder, Texte und Domain stehen
+- `indexierung`: `true` = die Seite darf in Suchmaschinen erscheinen (seit 14.10.2026). `false` setzt
+  auf allen Seiten „noindex“. Impressum, Datenschutz und 404 bleiben immer „noindex“
+- `og_bild`: Vorschaubild für Seiten ohne eigenes Bild. Ideal 1200 × 630 px
+- KI: In `robots.txt` sind Suchmaschinen und KI-Suche erlaubt, KI-Training (GPTBot, ClaudeBot,
+  Google-Extended) ist gesperrt. Das ist eine Bitte, die diese Anbieter nach eigenen Angaben beachten,
+  kein technischer Schutz
 - `rechtliches`: `true` blendet die Links zu Impressum und Datenschutz im Fußbereich ein.
   Die Texte liegen in `impressum.html` und `datenschutz.html`
 
