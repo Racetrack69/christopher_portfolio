@@ -2,10 +2,10 @@
 title: Skandinavien
 kurz: "Zwei Roadtrips in den Norden"          # eine Zeile unter dem Titel auf der Startseite
 reihenfolge: 2
-description: "Schwarzweißfotografie auf Film von Christopher Schmidtke. Der Geirangerfjord, Ålesund, Berge mit Schneefeldern und die Stockholmer U-Bahn im Fels."
+description: "Schwarzweißfotografie auf Film von Christopher Schmidtke. Der Geirangerfjord, Ålesund, Berge mit Schneefeldern, ein Bergsee in Norwegen, ein Fluss in Schweden und die Stockholmer U-Bahn im Fels."
 zeitraum: ""            # z. B. 2021
 titelbild: 1            # der Fjord mit den Wasserfällen
-reihen: [1, 2, 1]       # Fjord allein, Berg und Hafen nebeneinander, U-Bahn zum Schluss
+reihen: [1, 2, 2, 1]    # Fjord allein, zwei Berglandschaften, Hafen und Fluss, U-Bahn zum Schluss
 bilder:
   - datei: skandinavien-fjord-wasserfaelle
     format: 6x6
@@ -25,6 +25,15 @@ bilder:
     kamera: "Mamiya M645 1000S"
     film: "Ilford HP5 Plus"
     alt: "Ein runder Berg mit einem großen, zerklüfteten Schneefeld unter tief hängenden Wolken, davor kahle, zerfurchte Felsrücken mit einzelnen Schneeresten. Um das Bild der schwarze Filmrand."
+  - datei: skandinavien-hochtal-see
+    format: 6x45
+    w: 1600
+    h: 1200
+    ort: "Norwegen"
+    jahr: ""
+    kamera: "Mamiya M645 1000S"
+    film: "Ilford HP5 Plus"
+    alt: "Blick in ein Hochtal in Norwegen: links ein dunkler, steiler Hang, rechts ein mächtiger Berg mit felsiger Flanke, dahinter Gipfel mit einem kleinen Schneefeld, unten ein dunkler See zwischen Geröll. Um das Bild der schwarze Filmrand."
   - datei: skandinavien-hafenkanal
     format: 6x45
     w: 1600
@@ -34,6 +43,15 @@ bilder:
     kamera: "Mamiya M645 1000S"
     film: "Ilford HP5 Plus"
     alt: "Ein schmaler Hafenkanal in Ålesund zwischen hellen Häusern mit Spitzgiebeln, im ruhigen Wasser spiegeln sich Häuser und Wolken, rechts ein kleines Boot an einem Steg vor einer Kaimauer. Um das Bild der schwarze Filmrand."
+  - datei: skandinavien-fluss-wald
+    format: 6x45
+    w: 1600
+    h: 1200
+    ort: "Schweden"
+    jahr: ""
+    kamera: "Mamiya M645 1000S"
+    film: "Ilford HP5 Plus"
+    alt: "Ein Fluss in Schweden schäumt zwischen flachen, glatten Felsplatten hindurch, an beiden Ufern dichter Wald aus Fichten und Birken, dahinter ein flacher Bergrücken unter hellem, bewölktem Himmel. Um das Bild der schwarze Filmrand."
   - datei: skandinavien-ubahn-rolltreppen
     format: kb
     w: 1600
