@@ -1,18 +1,20 @@
-# Veröffentlichungen in Magazinen. Die Seite sortiert automatisch, neueste zuerst.
-# Felder: jahr, magazin, ausgabe, inhalt (optional), link (optional)
-# Die drei Einträge sind Beispiele. Ersetzen oder löschen.
+# Veröffentlichungen in Magazinen.
+# Felder: magazin (Pflicht), jahr, ausgabe, inhalt, link (alle optional)
+# Sortierung: Einträge mit Jahr zuerst, neueste oben. Einträge ohne Jahr folgen in der
+# Reihenfolge dieser Datei.
+# Jahr ohne Anführungszeichen schreiben (jahr: 2024). Fehlt eine Angabe, die Zeile weglassen.
+#
+# Vorläufig nur die Magazinnamen. Jahr, Ausgabe und Inhalt folgen.
 
-- jahr: 2026
-  magazin: "[Magazin]"
-  ausgabe: "Ausgabe [Nr.]"
-  inhalt: "Serie Japan, [Anzahl] Bilder"
+- magazin: "PhotoKlassik"
 
-- jahr: 2025
-  magazin: "[Magazin]"
-  ausgabe: "Online-Feature"
-  inhalt: "Serie Infrarot"
+- magazin: "Schwarzweiss"
 
-- jahr: 2024
-  magazin: "[Magazin]"
-  ausgabe: "Ausgabe [Nr.]"
-  inhalt: "Einzelbild aus Skandinavien"
+- magazin: "SilvergrainClassics"
+
+# Beispiel für einen vollständigen Eintrag:
+# - jahr: 2026
+#   magazin: "Name des Magazins"
+#   ausgabe: "Ausgabe 4/2026"
+#   inhalt: "Serie Japan, 8 Bilder"
+#   link: "https://…"

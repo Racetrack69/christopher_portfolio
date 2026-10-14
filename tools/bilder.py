@@ -4,8 +4,10 @@
 Pro Bild entsteht eine Datei: assets/images/<serie>/<name>.jpg
 Die lange Kante steht in _config.yml unter "bildgroesse" (Standard 1600 px).
 
-Alle Metadaten werden entfernt, auch GPS-Daten. Gesetzt werden nur Urheber und
-Copyright. Am Ende steht der Eintrag für die Serien-Datei.
+Alle Metadaten werden entfernt (EXIF, XMP, Kommentare), auch GPS-Daten. Gesetzt
+werden nur Urheber und Copyright. Am Ende steht der Eintrag für die Serien-Datei.
+
+Eingabe: JPEG oder TIFF, auch 16-Bit-Scans (z. B. Graustufen-TIFF aus der Scansoftware).
 
 Beispiele:
   python3 tools/bilder.py ~/Export/kyoto.jpg --serie japan --name kyoto-torii --format 6x6
@@ -50,10 +52,31 @@ def slug(text):
     return re.sub(r"[^a-z0-9]+", "-", text).strip("-") or "bild"
 
 
-def nach_srgb(im):
-    """Bringt das Bild nach RGB/sRGB. Gibt (Bild, ICC-Bytes) zurück."""
+def auf_8_bit(im):
+    """Bringt Bilder mit mehr als 8 Bit pro Kanal auf 8 Bit.
+
+    16-Bit-Graustufen-Scans öffnet Pillow als Modus "I;16" bzw. "I" mit Werten bis 65535.
+    Ohne diese Umrechnung würden sie beim Wechsel nach RGB fast weiß.
+    """
+    if im.mode.startswith("I;16"):
+        im = im.convert("I")
+    if im.mode not in ("I", "F"):
+        return im
+    niedrig, hoch = im.getextrema()
+    if im.mode == "F" and hoch <= 1:   # Gleitkomma, Werte 0 bis 1
+        faktor = 255
+    elif hoch > 255:                    # 16-Bit-Werte 0 bis 65535
+        faktor = 1 / 257
+    else:                               # liegt schon im 8-Bit-Bereich
+        faktor = 1
+    print("  Bild mit mehr als 8 Bit auf 8 Bit umgerechnet")
+    return im.point(lambda wert: wert * faktor).convert("L")
+
+
+def nach_srgb(im, icc):
+    """Bringt das Bild nach RGB/sRGB. icc: Farbprofil des Originals (Bytes) oder None.
+    Gibt (Bild, ICC-Bytes) zurück."""
     ziel = ImageCms.ImageCmsProfile(ImageCms.createProfile("sRGB"))
-    icc = im.info.get("icc_profile")
     if icc:
         try:
             quelle = ImageCms.ImageCmsProfile(io.BytesIO(icc))
@@ -92,10 +115,16 @@ def format_raten(w, h, vorgabe):
 
 def verarbeiten(quelle, serie, name, vorgabe_format, autor, groesse_px):
     im = Image.open(quelle)
+    icc_original = im.info.get("icc_profile")
     exif_alt = im.getexif()
+    if im.mode.startswith("I;16") and exif_alt.get(0x0112, 1) != 1:
+        print("  ÜBERSPRUNGEN: 16-Bit-Datei mit Drehungs-Angabe, die lässt sich nicht zuverlässig drehen.")
+        print("           Bitte als JPEG oder 8-Bit-TIFF exportieren, dabei wird die Drehung eingerechnet.")
+        return None
     gps = exif_alt.get_ifd(GPS_IFD) if exif_alt else {}
     im = ImageOps.exif_transpose(im)  # Ausrichtung übernehmen, bevor die Metadaten wegfallen
-    im, icc = nach_srgb(im)
+    im = auf_8_bit(im)
+    im, icc = nach_srgb(im, icc_original)
 
     w, h = im.size
     lang = max(w, h)
@@ -115,6 +144,8 @@ def verarbeiten(quelle, serie, name, vorgabe_format, autor, groesse_px):
     ziel = ROOT / "assets" / "images" / serie
     ziel.mkdir(parents=True, exist_ok=True)
     datei = ziel / f"{name}.jpg"
+    # Nichts aus dem Original mitnehmen: Pillow würde sonst z. B. einen JPEG-Kommentar übernehmen.
+    bild.info = {}
     bild.save(datei, "JPEG", quality=QUALITAET, optimize=True, progressive=True,
               icc_profile=icc, exif=exif.tobytes())
     print(f"  {neu[0]} × {neu[1]} px, {datei.stat().st_size // 1024} KB")
@@ -128,7 +159,7 @@ def verarbeiten(quelle, serie, name, vorgabe_format, autor, groesse_px):
 
 def main():
     ap = argparse.ArgumentParser(description="Fotos für die Website vorbereiten (eine Größe, ohne Metadaten).")
-    ap.add_argument("dateien", nargs="+", help="exportierte Bilddateien (JPEG oder TIFF)")
+    ap.add_argument("dateien", nargs="+", help="exportierte Bilddateien (JPEG oder TIFF, auch 16 Bit)")
     ap.add_argument("--serie", required=True, help="Ordnername der Serie, z. B. japan")
     ap.add_argument("--name", help="Dateiname ohne Endung (nur bei einer Datei). Standard: aus dem Dateinamen")
     ap.add_argument("--format", choices=sorted(TYPISCH), help="Filmformat (Aufnahmeformat, auch bei beschnittenen Bildern). Nötig bei 3:2, weil 6×9 und Kleinbild gleich proportioniert sind")

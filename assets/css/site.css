@@ -144,6 +144,7 @@ html.js a.frame:hover img.loaded,html.js .cover-link:hover img.loaded{opacity:.9
 .pubs,.posts{list-style:none;margin:0;padding:0;border-bottom:1px solid var(--line)}
 .pubs{margin-top:clamp(32px,4vw,56px)}
 .pubs li{display:grid;grid-template-columns:5.5rem minmax(0,1fr);gap:16px;padding-block:22px;border-top:1px solid var(--line)}
+.pubs.ohne-jahr li{grid-template-columns:minmax(0,1fr)}  /* solange kein Eintrag ein Jahr hat */
 .pubs .yr{font-weight:300;font-size:18px;color:var(--quiet);font-variant-numeric:tabular-nums}
 .pubs .mag{font-family:var(--serif);font-size:24px;font-weight:500;line-height:1.15}
 .pubs .mag a{text-decoration:none}

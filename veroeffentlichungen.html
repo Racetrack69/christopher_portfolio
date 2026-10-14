@@ -4,17 +4,32 @@ title: Veröffentlichungen
 description: Veröffentlichungen von Christopher Schmidtke in Fotografie-Magazinen.
 permalink: /veroeffentlichungen/
 ---
-{%- assign liste = site.data.veroeffentlichungen | sort: "jahr" | reverse -%}
+{%- comment -%}
+  Liste aus _data/veroeffentlichungen.yml. Einträge mit Jahr zuerst (neueste oben),
+  danach Einträge ohne Jahr in der Reihenfolge der Datei. Hat kein Eintrag ein Jahr,
+  entfällt die Jahresspalte. Leere Angaben (Ausgabe, Inhalt, Link) werden nicht angezeigt.
+{%- endcomment -%}
+{%- assign daten = site.data.veroeffentlichungen -%}
+{%- assign mit_jahr = daten | where_exp: "v", "v.jahr != nil" | sort: "jahr" | reverse -%}
+{%- assign ohne_jahr = daten | where_exp: "v", "v.jahr == nil" -%}
+{%- assign liste = mit_jahr | concat: ohne_jahr -%}
 <div class="col">
   <h1 class="p-title">Veröffentlichungen</h1>
   {%- if liste.size > 0 %}
-  <ol class="pubs">
+  <ol class="pubs{% if mit_jahr.size == 0 %} ohne-jahr{% endif %}">
     {%- for v in liste %}
+    {%- assign link = v.link | strip -%}
+    {%- assign ausgabe = v.ausgabe | strip -%}
+    {%- assign inhalt = v.inhalt | strip %}
     <li>
+      {%- if mit_jahr.size > 0 %}
       <span class="yr">{{ v.jahr }}</span>
+      {%- endif %}
       <div>
-        <div class="mag">{% if v.link %}<a href="{{ v.link }}" rel="noopener">{{ v.magazin }}</a>{% else %}{{ v.magazin }}{% endif %}</div>
-        <div class="det">{{ v.ausgabe }}{% if v.inhalt %} · {{ v.inhalt }}{% endif %}</div>
+        <div class="mag">{% if link != "" %}<a href="{{ link }}" rel="noopener">{{ v.magazin }}</a>{% else %}{{ v.magazin }}{% endif %}</div>
+        {%- if ausgabe != "" or inhalt != "" %}
+        <div class="det">{{ ausgabe }}{% if ausgabe != "" and inhalt != "" %} · {% endif %}{{ inhalt }}</div>
+        {%- endif %}
       </div>
     </li>
     {%- endfor %}
