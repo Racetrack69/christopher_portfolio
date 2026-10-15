@@ -170,6 +170,7 @@ html.js a.frame:hover img.loaded,html.js .cover-link:hover img.loaded{opacity:.9
 .pubs .ti a{text-decoration:none}
 .pubs .ti a:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
 .pubs .det{margin-top:6px;font-size:15px;line-height:1.5;color:var(--ink-2)}
+.pubs .pub-text{max-width:34rem;margin:10px 0 0;font-size:15px;line-height:1.6;color:var(--ink-2);text-wrap:pretty}
 .pubs .pub-links{display:flex;flex-wrap:wrap;column-gap:20px;row-gap:2px;margin-top:6px}
 .pubs .pub-links a{font-size:14px;color:var(--quiet);text-decoration:none;transition:color .2s}
 .pubs .pub-links a:hover{color:var(--ink)}
@@ -179,6 +180,8 @@ html.js a.frame:hover img.loaded,html.js .cover-link:hover img.loaded{opacity:.9
 /* Titelseiten: eigene Spalte, sobald ein Eintrag ein Cover hat */
 .pubs.mit-cover li{grid-template-columns:5.5rem 4.5rem minmax(0,1fr)}
 .pubs.mit-cover.ohne-jahr li{grid-template-columns:4.5rem minmax(0,1fr)}
+/* Eigene Publikationen: größeres Titelbild */
+.pubs.gross.mit-cover li{grid-template-columns:5.5rem 10rem minmax(0,1fr);column-gap:clamp(16px,2.4vw,32px)}
 .pubs .pub-cover{display:block}
 .pubs .pub-cover img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:contain;object-position:left top}
 /* Beitragsliste: kleines Bild links, daneben Datum, Titel, Teaser. Ohne Bild bleibt der Platz frei,
@@ -197,6 +200,7 @@ html.js a.frame:hover img.loaded,html.js .cover-link:hover img.loaded{opacity:.9
   .pubs .yr:empty{display:none}
   .pubs.mit-cover li,.pubs.mit-cover.ohne-jahr li{grid-template-columns:3.75rem minmax(0,1fr);column-gap:16px}
   .pubs.mit-cover .yr{grid-column:1/-1}
+  .pubs.gross.mit-cover li{grid-template-columns:7.5rem minmax(0,1fr)}
   .pubs .ti{font-size:22px}
   .posts a{grid-template-columns:4.75rem minmax(0,1fr);column-gap:16px;padding-block:20px}
   .posts .txt{gap:4px}

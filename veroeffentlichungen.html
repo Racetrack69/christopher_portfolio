@@ -1,29 +1,39 @@
 ---
 layout: default
 title: Veröffentlichungen
-description: Artikel und Bilder von Christopher Schmidtke in PhotoKlassik, SilvergrainClassics und Schwarzweiss sowie online bei Ilford Photo und APHOG.
+description: Ein eigenes Fotozine sowie Artikel und Bilder von Christopher Schmidtke in PhotoKlassik, SilvergrainClassics und Schwarzweiss und online bei Ilford Photo und APHOG.
 permalink: /veroeffentlichungen/
 ---
 {%- comment -%}
   Einträge aus _data/veroeffentlichungen.yml (Felder und Sortierung sind dort beschrieben).
-  Zwei Abschnitte: Magazine und Online (online: true). Die Zwischenüberschriften erscheinen
-  nur, wenn es beide Abschnitte gibt. Die Liste selbst baut _includes/veroeffentlichungen-liste.html.
+  Drei Abschnitte: Eigene Publikationen (eigen: true), In Magazinen, Online (online: true).
+  Die Zwischenüberschriften erscheinen nur, wenn es mehr als einen Abschnitt gibt.
+  Die Liste selbst baut _includes/veroeffentlichungen-liste.html.
 {%- endcomment -%}
 {%- assign daten = site.data.veroeffentlichungen -%}
-{%- assign print = daten | where_exp: "v", "v.online != true" -%}
-{%- assign online = daten | where_exp: "v", "v.online == true" -%}
-{%- assign beide = false -%}
-{%- if print.size > 0 and online.size > 0 -%}{%- assign beide = true -%}{%- endif -%}
+{%- assign eigen = daten | where_exp: "v", "v.eigen == true" -%}
+{%- assign print = daten | where_exp: "v", "v.eigen != true" | where_exp: "v", "v.online != true" -%}
+{%- assign online = daten | where_exp: "v", "v.online == true" | where_exp: "v", "v.eigen != true" -%}
+{%- assign abschnitte = 0 -%}
+{%- if eigen.size > 0 -%}{%- assign abschnitte = abschnitte | plus: 1 -%}{%- endif -%}
+{%- if print.size > 0 -%}{%- assign abschnitte = abschnitte | plus: 1 -%}{%- endif -%}
+{%- if online.size > 0 -%}{%- assign abschnitte = abschnitte | plus: 1 -%}{%- endif -%}
 <div class="col">
   <h1 class="p-title">Veröffentlichungen</h1>
+  {%- if eigen.size > 0 %}
+  {%- if abschnitte > 1 %}
+  <h2 class="mini pubs-h">Eigene Publikationen</h2>
+  {%- endif %}
+  {% include veroeffentlichungen-liste.html daten=eigen gross=true %}
+  {%- endif %}
   {%- if print.size > 0 %}
-  {%- if beide %}
+  {%- if abschnitte > 1 %}
   <h2 class="mini pubs-h">In Magazinen</h2>
   {%- endif %}
   {% include veroeffentlichungen-liste.html daten=print %}
   {%- endif %}
   {%- if online.size > 0 %}
-  {%- if beide %}
+  {%- if abschnitte > 1 %}
   <h2 class="mini pubs-h">Online</h2>
   {%- endif %}
   {% include veroeffentlichungen-liste.html daten=online %}

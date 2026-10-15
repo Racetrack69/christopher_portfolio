@@ -1,5 +1,6 @@
 {%- comment -%}
-  Eine Liste von Veröffentlichungen. Parameter: daten (Einträge aus _data/veroeffentlichungen.yml).
+  Eine Liste von Veröffentlichungen. Parameter: daten (Einträge aus _data/veroeffentlichungen.yml),
+  gross (true = größere Titelbilder, für eigene Publikationen).
   Nach Jahr gruppiert, neueste oben, innerhalb eines Jahres in der Reihenfolge der Datei.
   Das Jahr steht nur beim ersten Eintrag eines Jahres. Einträge ohne Jahr folgen am Ende.
   Hat kein Eintrag ein Jahr, entfällt die Jahresspalte; hat ein Eintrag ein Cover,
@@ -15,7 +16,7 @@
 {%- for g in gruppen -%}{%- assign liste = liste | concat: g.items -%}{%- endfor -%}
 {%- assign liste = liste | concat: ohne_jahr -%}
 {%- assign vorher = "" -%}
-<ol class="pubs{% if mit_jahr.size == 0 %} ohne-jahr{% endif %}{% if mit_cover.size > 0 %} mit-cover{% endif %}">
+<ol class="pubs{% if mit_jahr.size == 0 %} ohne-jahr{% endif %}{% if mit_cover.size > 0 %} mit-cover{% endif %}{% if include.gross %} gross{% endif %}">
   {%- for v in liste %}
   {%- assign link = v.link | strip -%}
   {%- assign ausgabe = v.ausgabe | strip -%}
@@ -38,15 +39,22 @@
     <span class="yr">{% if jahr != vorher %}{{ jahr }}{% endif %}</span>
     {%- endif %}
     {%- if mit_cover.size > 0 %}
-    <span class="pub-cover">{% if v.cover %}<img src="{{ '/assets/images/veroeffentlichungen/' | append: v.cover | append: '.jpg' | relative_url }}" alt="Titelseite {{ v.magazin | escape }}{% if ausgabe != '' %}, {{ ausgabe | escape }}{% endif %}" loading="lazy" decoding="async">{% endif %}</span>
+    <span class="pub-cover">{% if v.cover %}<img src="{{ '/assets/images/veroeffentlichungen/' | append: v.cover | append: '.jpg' | relative_url }}" alt="{% if v.cover_alt %}{{ v.cover_alt | escape }}{% else %}Titelseite {{ v.magazin | escape }}{% if ausgabe != '' %}, {{ ausgabe | escape }}{% endif %}{% endif %}" loading="lazy" decoding="async">{% endif %}</span>
     {%- endif %}
     <div class="pub-txt">
       <div class="ti"{% if v.sprache %} lang="{{ v.sprache }}"{% endif %}>{% if link != "" %}<a href="{{ link }}" target="_blank" rel="noopener">{{ kopf }}<span class="vh"> (öffnet in neuem Fenster)</span></a>{% else %}{{ kopf }}{% endif %}</div>
       {%- if det != "" %}
       <div class="det">{{ det }}</div>
       {%- endif %}
-      {%- if link != "" or serie %}
+      {%- if v.text and v.text != "" %}
+      <p class="pub-text">{{ v.text }}</p>
+      {%- endif %}
+      {%- assign mail = site.author.email | strip -%}
+      {%- assign anfrage = false -%}
+      {%- if v.anfrage and mail != "" -%}{%- assign anfrage = true -%}{%- endif %}
+      {%- if link != "" or serie or anfrage %}
       <div class="pub-links">
+        {%- if anfrage %}<a href="mailto:{{ mail }}?subject={{ kopf | uri_escape }}">Ein Exemplar anfragen ✉</a>{% endif -%}
         {%- if link != "" %}<a href="{{ link }}" target="_blank" rel="noopener">{% if v.online %}Online lesen{% else %}Zum Heft{% endif %} ↗<span class="vh"> (öffnet in neuem Fenster)</span></a>{% endif -%}
         {%- if serie %}<a href="{{ serie.url | relative_url }}">Zur Serie {{ serie.title }} →</a>{% endif -%}
       </div>

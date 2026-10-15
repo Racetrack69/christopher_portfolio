@@ -3,11 +3,16 @@
 # Felder:
 #   magazin   Pflicht. Name des Magazins bzw. der Website.
 #   online    true für Beiträge auf Websites. Sie stehen im eigenen Abschnitt „Online“.
+#   eigen     true für eigene Publikationen (Zine, Buch). Sie stehen oben im Abschnitt
+#             „Eigene Publikationen“, mit größerem Titelbild.
 #   jahr      Jahr der Ausgabe, ohne Anführungszeichen (jahr: 2020).
 #   ausgabe   z. B. "Ausgabe IV/2020" oder "Ausgabe 7, Sommer 2020", online das Datum.
 #   titel     Titel des Beitrags. Steht groß in der Liste. Ohne Titel steht dort der Magazinname.
 #   sprache   en, wenn der Titel englisch ist (für Silbentrennung und Screenreader).
 #   inhalt    kurze Ergänzung, z. B. "Serie Japan, 8 Bilder".
+#   text      ein paar Sätze unter der Zeile Magazin · Ausgabe (für eigene Publikationen).
+#   anfrage   true: „Exemplar anfragen“ als Mail-Link. Erscheint erst, wenn in _config.yml
+#             unter author.email eine Adresse steht.
 #   serie     Ordnername einer Serie (z. B. island). Darunter erscheint „Zur Serie …“.
 #   link      Adresse des Beitrags oder der Heftseite beim Verlag. Der Titel wird zum Link,
 #             darunter steht „Online lesen ↗“ (online: true) bzw. „Zum Heft ↗“ (Magazine).
@@ -15,11 +20,23 @@
 #             assets/images/veroeffentlichungen/ (z. B. cover: photoklassik-2020-4).
 #             Hochformat, etwa 600 px breit, sRGB. Sobald ein Eintrag ein Cover hat, bekommt die
 #             Liste eine schmale Spalte dafür. Einträge ohne Cover lassen sie frei.
+#   cover_alt Beschreibung des Titelbilds für Screenreader (sonst „Titelseite …“).
 # Alle Felder außer magazin sind optional. Fehlt eine Angabe, die Zeile weglassen.
 #
 # Sortierung: nach Jahr, neueste oben. Das Jahr steht nur beim ersten Eintrag eines Jahres.
 # Innerhalb eines Jahres gilt die Reihenfolge dieser Datei, also das neueste Heft zuerst.
 # Einträge ohne Jahr stehen am Ende.
+
+# ========== Eigene Publikationen ==========
+
+- eigen: true
+  jahr: 2020
+  magazin: "Fotozine im Eigenverlag"
+  titel: "Things I’ve seen in Scotland"
+  sprache: en
+  text: "Dreimal war ich in Schottland, bis ganz hoch in den Norden. Mitgebracht habe ich vor allem Stimmungen: Bilder, auf denen man nicht immer erkennt, was es ist, aber spürt, wie es war. Dabei waren die Leica M3, die Rolleiflex 3.5E und die Mamiya RB67. Ein paar Exemplare habe ich noch."
+
+# ========== In Magazinen ==========
 
 # ---------- 2024 ----------
 - jahr: 2024
