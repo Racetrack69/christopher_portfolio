@@ -12,7 +12,7 @@ Dort klappe ich den Lichtschacht auf und schaue von oben auf die Mattscheibe. Di
 
 Dann wird aufgebaut. Stativbeine ausziehen, Kamera ausrichten, Drahtauslöser anschrauben. Und warten, bis das Licht passt oder eine Wolke weiterzieht. Manchmal geht das schnell, manchmal nicht, und manchmal verpasse ich den Moment auch. Das gehört dazu. Entschleunigung pur.
 
-{% include beitragsbild.html serie="journal" datei="mamiya-645-shift-stativ" w="1600" h="900" alt="Eine Mamiya M645 1000S mit Shift-Objektiv und Drahtauslöser auf einem Stativ, dahinter unscharf eine Berglandschaft mit See und hellen Felsplatten unter grauem Himmel." text="Mamiya M645 1000S mit Shift-Objektiv" %}
+{% include beitragsbild.html serie="journal" datei="mamiya-645-schweden-stativ" w="1600" h="900" alt="Eine Mamiya M645 1000S mit 150-mm-Objektiv und Drahtauslöser auf einem Stativ, von oben fotografiert, die Stativbeine gespreizt zwischen runden Steinen im warmen Licht. Im aufgeklappten Lichtschacht zeigt die Mattscheibe ein Ufer mit Steinen vor einem See." text="Mamiya M645 1000S, Schweden" %}
 
 ## Von Hand
 

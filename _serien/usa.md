@@ -2,10 +2,10 @@
 title: USA
 kurz: "Wüste, Joshua Trees und die Alabama Hills"          # eine Zeile unter dem Titel auf der Startseite
 reihenfolge: 3
-description: "Schwarzweißfotografie auf Film von Christopher Schmidtke. Die Imperial Sand Dunes, Joshua Trees, das Death Valley, der Bryce Canyon, eine Straße voller Risse und die Granitfelsen der Alabama Hills."
+description: "Schwarzweißfotografie auf Film von Christopher Schmidtke. Die Imperial Sand Dunes, Joshua Trees im Sturm bei Las Vegas, das Death Valley, der Bryce Canyon, Tankstellen bei Tag und am Abend, eine Straße voller Risse und die Granitfelsen der Alabama Hills."
 zeitraum: ""            # z. B. 2022
 titelbild: 3            # der Joshua Tree
-reihen: [1, 2, 1, 2, 2, 2, 1] # Dünenpanorama, zwei Quadrate, Death Valley, Tankstelle und Schlucht, Straße und Schotterweg (Kleinbildstreifen), Felsen, zum Schluss der gerade Weg
+reihen: [1, 2, 2, 1, 2, 1, 2, 2, 2, 1, 1] # Dünenpanorama, zwei Quadrate, Joshua Trees im Sturm, Death Valley, Felsen und Fluss, Tafelberge, Tankstelle und Schlucht, Straße und Schotterweg (Kleinbildstreifen), Felsen, gerader Weg, zum Schluss die Tankstelle am Abend
 bilder:
   - datei: usa-duenen-panorama
     format: kb
@@ -34,6 +34,24 @@ bilder:
     kamera: ""
     film: "Ilford FP4 Plus"
     alt: "Ein einzelner Joshua Tree im Joshua Tree National Park mit stacheligen Blattbüscheln an verzweigten Ästen, dahinter ein flacher, steiniger Hügel und ein Himmel voller fein gezogener Schleierwolken. Um das Bild der schwarze Filmrand."
+  - datei: usa-joshua-tree-regen
+    format: 6x6
+    w: 1075
+    h: 1080
+    ort: "Bei Las Vegas"
+    jahr: ""
+    kamera: ""
+    film: ""
+    alt: "Ein Joshua Tree mit stacheligen Blattbüscheln steht im Regen zwischen niedrigen Büschen, dahinter verschwinden zerklüftete Berge in tief hängenden Sturmwolken. Um das Bild der schwarze Filmrand."
+  - datei: usa-joshua-trees-sturm
+    format: 6x6
+    w: 1080
+    h: 1080
+    ort: "Bei Las Vegas"
+    jahr: ""
+    kamera: ""
+    film: ""
+    alt: "Ein Joshua Tree mit zwei auseinanderstrebenden Ästen und nassen, glänzenden Blattbüscheln vor grauem Sturmhimmel, rechts ein kleinerer Joshua Tree, dahinter eine weite, flache Wüstenebene im Dunst. Am Rand der Filmrand mit Aufdruck."
   - datei: usa-badlands
     format: 6x9
     w: 1080
@@ -43,6 +61,33 @@ bilder:
     kamera: "Zeiss Ikon"
     film: "Ilford HP5 Plus"
     alt: "Blick über ein Gewirr aus kahlen, tief gefurchten Erosionsrücken im Death Valley, die Grate im Licht, die Rinnen dazwischen im Schatten, dahinter dunklere Bergketten unter einem hellen Himmel. Um das Bild der schwarze Filmrand mit Aufdruck."
+  - datei: usa-felsen-wolken
+    format: 6x6
+    w: 1080
+    h: 1080
+    ort: ""
+    jahr: ""
+    kamera: "Rolleiflex 2.8C"
+    film: "Ilford HP5 Plus"
+    alt: "Zerklüftete, rund verwitterte Sandsteinfelsen türmen sich zu einem schroffen Gipfel, im Vordergrund ein heller, glatt geschliffener Felsrücken, darüber ein bewölkter Himmel. Um das Bild der schwarze Filmrand."
+  - datei: usa-canyon-fluss
+    format: 6x6
+    w: 1080
+    h: 1080
+    ort: ""
+    jahr: ""
+    kamera: "Rolleiflex 2.8C"
+    film: "Ilford FP4 Plus"
+    alt: "Ein Fluss zieht sich dunkel durch eine tiefe Schlucht mit steilen, geschichteten Felswänden, die linke Seite liegt im Schatten, dahinter im Licht eine weite Hochebene mit Tafelbergen und kleinen weißen Wolken. Um das Bild der schwarze Filmrand."
+  - datei: usa-tafelberge
+    format: kb
+    w: 1080
+    h: 720
+    ort: ""
+    jahr: ""
+    kamera: "Minolta XD-7"
+    film: "Ilford HP5 Plus"
+    alt: "Drei mächtige Tafelberge mit steilen Felswänden stehen als dunkle Silhouetten in einer weiten, flachen Wüste unter hellem Dämmerungshimmel, im Vordergrund windet sich eine Schotterstraße, auf der ein einzelnes Auto mit Licht fährt."
   - datei: usa-tankstelle
     format: kb
     w: 1600
@@ -106,9 +151,18 @@ bilder:
     kamera: "Minolta XD-7"
     film: "Ilford HP5 Plus"
     alt: "Ein gerader Schotterweg führt in den Alabama Hills durch dunkles Buschland auf eine Felsgruppe und eine helle, schneebedeckte Bergkette zu."
+  - datei: usa-tankstelle-nacht
+    format: 6x6
+    w: 1080
+    h: 1080
+    ort: ""
+    jahr: ""
+    kamera: "Rolleiflex 2.8C"
+    film: "Ilford HP5 Plus"
+    alt: "Eine Tankstelle in der Abenddämmerung, unter dem Vordach leuchten Lampen über Zapfsäulen, rechts ein beleuchteter Shop mit Speedway-Schild, dahinter die dunkle Silhouette eines Berges vor hellem Himmel. Um das Bild der schwarze Filmrand."
 ---
 Ich liebe einfach die Wüste. Ihre Stille, ihre Unwirtlichkeit, diese ganz besondere Stimmung und nachts die zahllosen Sterne. Ich mag ihre Andersartigkeit, manchmal fühlt man sich wie auf einem anderen Planeten.
 
-Auf jedem Roadtrip durch den Westen der USA ist der Joshua Tree National Park mein Highlight, wegen der Form dieser Bäume und weil sie mitten in der Wüste stehen. Die Alabama Hills sind auch wirklich cool, am besten vor Sonnenaufgang, wenn das Licht langsam über die Felsen kommt. Und dann die Dünen mit ihren abstrakten Formen.
+Auf jedem Roadtrip durch den Westen der USA ist der Joshua Tree National Park mein Highlight, wegen der Form dieser Bäume und weil sie mitten in der Wüste stehen. Bei Las Vegas habe ich sie einmal im Regen fotografiert, ein Sturm in der Wüste. Absolut beeindruckend. Die Alabama Hills sind auch wirklich cool, am besten vor Sonnenaufgang, wenn das Licht langsam über die Felsen kommt. Und dann die Dünen mit ihren abstrakten Formen.
 
 Meine armen Kameras mussten schon einige Male von Sand und Staub befreit werden. Einmal bin ich bei heftigem Wind Angels Landing hinaufgewandert, überall Staub. Oben habe ich noch ein Bild mit der Rolleiflex gemacht, danach tat sich gar nichts mehr, sie musste in die Reparatur. Und ein paar der schönsten Negative aus Amerika haben es nie hierher geschafft: Luftblasen in der Entwicklerdose. Auch das gehört dazu.
