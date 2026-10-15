@@ -239,13 +239,15 @@ html.js a.frame:hover img.loaded,html.js .cover-link:hover img.loaded{opacity:.9
 .contact{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 20px;margin:32px 0 0;padding-top:20px;border-top:1px solid var(--line);font-size:15px}
 .contact dt{color:var(--quiet)}
 .contact dd{margin:0;overflow-wrap:anywhere}
-.contact .more{display:table;margin-top:6px;padding-block:4px;color:var(--quiet);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
-.contact .more:hover{color:var(--ink)}
+.contact .more,.kit .more{display:table;margin-top:6px;padding-block:4px;color:var(--quiet);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+.contact .more:hover,.kit .more:hover{color:var(--ink)}
 .kit{margin:32px 0 0;padding-top:20px;border-top:1px solid var(--line)}
 .kit .mini{margin:0 0 16px}
 .kit .contact{gap:14px 20px;margin:0;padding:0;border:0}
 .kit dd span{display:block}
-.kit dd span+span{margin-top:6px}
+.kit dd span+span{margin-top:4px}
+.kit>.more{margin-top:18px}
+.kit-text p{font-size:15.5px;line-height:1.75}
 @media (max-width:560px){.kit .contact{grid-template-columns:1fr;gap:2px}.kit dd{margin-bottom:14px}.kit dd:last-child{margin-bottom:0}}
 @media (max-width:760px){.about{grid-template-columns:1fr}}
 
