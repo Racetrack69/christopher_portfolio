@@ -1,16 +1,18 @@
 {%- comment -%}
   Ein Bild auf der Serienseite: Rahmen, Link zur großen Ansicht, Beschriftung
-  (links Titel bzw. Ort und Format, rechts Kamera und Film).
+  (links Ort und Jahr, falls eingetragen, dann das Format; rechts Kamera und Film).
   Parameter: bild, serie, nr (1, 2, …), pos (Position in der Reihe, für die Einblend-Verzögerung)
 {%- endcomment -%}
 {%- assign b = include.bild -%}
 {%- assign base = '/assets/images/' | append: include.serie | append: '/' | append: b.datei -%}
 {%- assign label = site.data.formate[b.format] | default: b.format -%}
 {%- assign r = b.w | times: 1.0 | divided_by: b.h -%}
+{%- comment -%} Ohne Ort steht links nur das Format (ist ein Jahr eingetragen, das Jahr davor) {%- endcomment -%}
+{%- assign titel = "" -%}
 {%- if b.ort and b.ort != "" -%}
   {%- capture titel -%}{{ b.ort }}{% if b.jahr and b.jahr != "" %}, {{ b.jahr }}{% endif %}{%- endcapture -%}
-{%- else -%}
-  {%- capture titel -%}Ohne Titel, {% if include.nr < 10 %}0{% endif %}{{ include.nr }}{%- endcapture -%}
+{%- elsif b.jahr and b.jahr != "" -%}
+  {%- capture titel -%}{{ b.jahr }}{%- endcapture -%}
 {%- endif -%}
 {%- capture info -%}{{ label }}{% if b.kamera and b.kamera != "" %} · {{ b.kamera }}{% endif %}{% if b.film and b.film != "" %} · {{ b.film }}{% endif %}{%- endcapture -%}
 {%- assign eager = false -%}{%- if include.nr <= 2 -%}{%- assign eager = true -%}{%- endif -%}
@@ -19,5 +21,5 @@
     {% include img.html base=base bild=b alt=b.alt eager=eager %}
   </a>
   {%- capture geraet -%}{{ b.kamera }}{% if b.kamera and b.kamera != "" and b.film and b.film != "" %} · {% endif %}{{ b.film }}{%- endcapture %}
-  <figcaption><span>{{ titel }} · {{ label }}</span>{% if geraet != "" %}<span class="cap-r">{{ geraet }}</span>{% endif %}</figcaption>
+  <figcaption><span>{% if titel != "" %}{{ titel }} · {% endif %}{{ label }}</span>{% if geraet != "" %}<span class="cap-r">{{ geraet }}</span>{% endif %}</figcaption>
 </figure>

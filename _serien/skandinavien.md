@@ -2,7 +2,7 @@
 title: Skandinavien
 kurz: "Zwei Roadtrips in den Norden"          # eine Zeile unter dem Titel auf der Startseite
 reihenfolge: 2
-description: "Schwarzweißfotografie auf Film von Christopher Schmidtke. Der Geirangerfjord, ein Gletscher, Ålesund, Berge mit Schneefeldern, ein Bergsee in Norwegen, ein Fluss in Schweden und die Stockholmer U-Bahn im Fels."
+description: "Schwarzweißfotografie auf Film von Christopher Schmidtke. Der Geirangerfjord, der Briksdalsbreen, Ålesund, Berge mit Schneefeldern, ein Bergsee in Norwegen, ein Fluss in Schweden und die Stockholmer U-Bahn im Fels."
 zeitraum: ""            # z. B. 2021
 titelbild: 1            # der Fjord mit den Wasserfällen
 reihen: [1, 2, 2, 2]    # Fjord allein, Eis und Schnee, Bergsee und Fluss, Hafen und U-Bahn
@@ -20,16 +20,16 @@ bilder:
     format: 6x45
     w: 1600
     h: 1200
-    ort: ""
+    ort: "Briksdalsbreen"
     jahr: ""
     kamera: "Mamiya M645 1000S"
     film: "Ilford HP5 Plus"
-    alt: "Eine Gletscherzunge schiebt sich als helle, zerklüftete Eismasse zwischen zwei steilen, glatt geschliffenen Felswänden herab, darüber ein dunkler, wolkenloser Himmel. Um das Bild der schwarze Filmrand."
+    alt: "Die Gletscherzunge des Briksdalsbreen schiebt sich als helle, zerklüftete Eismasse zwischen zwei steilen, glatt geschliffenen Felswänden herab, darüber ein dunkler, wolkenloser Himmel. Um das Bild der schwarze Filmrand."
   - datei: skandinavien-schneefeld-berg
     format: 6x45
     w: 1600
     h: 1129
-    ort: ""
+    ort: "Geiranger"
     jahr: ""
     kamera: "Mamiya M645 1000S"
     film: "Ilford HP5 Plus"
