@@ -46,7 +46,7 @@
       {%- endif %}
       {%- if link != "" or serie %}
       <div class="pub-links">
-        {%- if link != "" %}<a href="{{ link }}" rel="noopener">Online lesen ↗</a>{% endif -%}
+        {%- if link != "" %}<a href="{{ link }}" rel="noopener">{% if v.online %}Online lesen{% else %}Zum Heft{% endif %} ↗</a>{% endif -%}
         {%- if serie %}<a href="{{ serie.url | relative_url }}">Zur Serie {{ serie.title }} →</a>{% endif -%}
       </div>
       {%- endif %}

@@ -9,7 +9,8 @@
 #   sprache   en, wenn der Titel englisch ist (für Silbentrennung und Screenreader).
 #   inhalt    kurze Ergänzung, z. B. "Serie Japan, 8 Bilder".
 #   serie     Ordnername einer Serie (z. B. island). Darunter erscheint „Zur Serie …“.
-#   link      Adresse des Beitrags im Netz. Der Titel wird zum Link, darunter steht „Online lesen ↗“.
+#   link      Adresse des Beitrags oder der Heftseite beim Verlag. Der Titel wird zum Link,
+#             darunter steht „Online lesen ↗“ (online: true) bzw. „Zum Heft ↗“ (Magazine).
 #   cover     Foto der Titelseite: Dateiname ohne Endung, die Datei liegt in
 #             assets/images/veroeffentlichungen/ (z. B. cover: photoklassik-2020-4).
 #             Hochformat, etwa 600 px breit, sRGB. Sobald ein Eintrag ein Cover hat, bekommt die
@@ -37,6 +38,7 @@
   ausgabe: "Ausgabe 153, April/Mai 2023"
   titel: "Wenn das Licht schwindet – Nachtfotografie und die Faszination der Entschleunigung"
   serie: japan
+  link: "https://www.tecklenborg-verlag.de/products/schwarzweiss-153"
 
 # ---------- 2020 ----------
 - jahr: 2020
@@ -54,12 +56,14 @@
   ausgabe: "Ausgabe 7, Sommer 2020"
   titel: "Twilight is the black and white photographer’s best friend"
   sprache: en
+  link: "https://shop.silvergrainclassics.com/products/silvergrainclassics-issue-7-summer-2020"
 
 - jahr: 2020
   magazin: "SilvergrainClassics"
   ausgabe: "Ausgabe 6, Frühjahr 2020"
   titel: "The Rolleiflex: How Gear might actually improve your photography"
   sprache: en
+  link: "https://shop.silvergrainclassics.com/products/silvergrainclassics-issue-6-spring-2020"
 
 # ---------- 2019 ----------
 - jahr: 2019
@@ -67,6 +71,7 @@
   ausgabe: "Ausgabe 132, Oktober/November 2019"
   titel: "Surreale Landschaft – Infrarotfotografie auf Film"
   serie: infrarot
+  link: "https://www.tecklenborg-verlag.de/products/schwarzweiss-132"
 
 - jahr: 2019
   magazin: "PhotoKlassik International"
@@ -74,12 +79,14 @@
   titel: "A Road Trip around Iceland"
   sprache: en
   serie: island
+  link: "https://shop.silvergrainclassics.com/products/photoklassik-international-issue-4-iii-2019"
 
 - jahr: 2019
   magazin: "PhotoKlassik International"
   ausgabe: "Ausgabe II/2019"
   titel: "A case for new lenses on old cameras"
   sprache: en
+  link: "https://shop.silvergrainclassics.com/products/photoklassik-international-issue-3-ii-2019"
 
 # ========== Online ==========
 
