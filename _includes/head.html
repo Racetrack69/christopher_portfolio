@@ -53,9 +53,10 @@
 {%- endif %}
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#ECEBE8">
-<link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="32x32">
-<link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
-<link rel="apple-touch-icon" href="{{ '/assets/apple-touch-icon.png' | relative_url }}">
+{%- comment -%} Favicon: Mamiya mit Lichtschacht von der Seite (seit 15.10.2026). ?v= bei neuem Favicon hochzählen, sonst zeigen Browser lange das alte. {%- endcomment %}
+<link rel="icon" href="{{ '/favicon.ico' | relative_url }}?v=2" sizes="32x32">
+<link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}?v=2" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{{ '/assets/apple-touch-icon.png' | relative_url }}?v=2">
 <link rel="preload" href="{{ '/assets/fonts/jost-latin-wght-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{{ '/assets/fonts/cormorant-garamond-latin-500-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
 {%- comment -%} ?v= ändert sich bei jedem Build, damit Browser nach einem Upload sofort die neue Gestaltung laden {%- endcomment %}
