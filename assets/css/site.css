@@ -127,7 +127,7 @@ html.js a.frame:hover img.loaded,html.js .cover-link:hover img.loaded{opacity:.9
 
 /* Serienkopf */
 /* Ziffern in der Serifenschrift auf Linie (Cormorant setzt sonst Mediävalziffern, 2010 sähe aus wie 2o1o) */
-.mark,.s-title,.p-title,.about h1,.article .body h2,.posts .pt,.pubs .mag,.cover .c-title{font-variant-numeric:lining-nums}
+.mark,.s-title,.p-title,.about h1,.article .body h2,.posts .pt,.pubs .ti,.cover .c-title{font-variant-numeric:lining-nums}
 
 /* Seitentitel bewusst kleiner als der Name im Kopf */
 .s-head{display:grid;gap:14px;max-width:46rem;margin-bottom:clamp(44px,6vw,88px)}
@@ -152,10 +152,18 @@ html.js a.frame:hover img.loaded,html.js .cover-link:hover img.loaded{opacity:.9
 .pubs li{display:grid;grid-template-columns:5.5rem minmax(0,1fr);gap:16px;padding-block:22px;border-top:1px solid var(--line)}
 .pubs.ohne-jahr li{grid-template-columns:minmax(0,1fr)}  /* solange kein Eintrag ein Jahr hat */
 .pubs .yr{font-weight:300;font-size:18px;color:var(--quiet);font-variant-numeric:tabular-nums}
-.pubs .mag{font-family:var(--serif);font-size:24px;font-weight:500;line-height:1.15}
-.pubs .mag a{text-decoration:none}
-.pubs .mag a:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
-.pubs .det{margin-top:4px;font-size:15px;color:var(--ink-2)}
+/* Titel des Beitrags (ohne Titel der Magazinname), darunter Magazin · Ausgabe, ggf. Link zur Serie */
+.pubs .ti{font-family:var(--serif);font-size:24px;font-weight:500;line-height:1.2;text-wrap:pretty;hyphens:auto}
+.pubs .ti a{text-decoration:none}
+.pubs .ti a:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+.pubs .det{margin-top:6px;font-size:15px;line-height:1.5;color:var(--ink-2)}
+.pubs .pub-serie{display:inline-block;margin-top:6px;font-size:14px;color:var(--quiet);text-decoration:none;transition:color .2s}
+.pubs .pub-serie:hover{color:var(--ink)}
+/* Titelseiten: eigene Spalte, sobald ein Eintrag ein Cover hat */
+.pubs.mit-cover li{grid-template-columns:5.5rem 4.5rem minmax(0,1fr)}
+.pubs.mit-cover.ohne-jahr li{grid-template-columns:4.5rem minmax(0,1fr)}
+.pubs .pub-cover{display:block}
+.pubs .pub-cover img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:contain;object-position:left top}
 /* Beitragsliste: kleines Bild links, daneben Datum, Titel, Teaser. Ohne Bild bleibt der Platz frei,
    damit alle Texte auf derselben Linie beginnen. */
 .posts a{display:grid;grid-template-columns:7.5rem minmax(0,1fr);column-gap:clamp(20px,2.6vw,36px);align-items:start;padding-block:24px;border-top:1px solid var(--line);text-decoration:none}
@@ -169,6 +177,10 @@ html.js a.frame:hover img.loaded,html.js .cover-link:hover img.loaded{opacity:.9
 .posts a:hover .thumb img{opacity:.88}
 @media (max-width:640px){
   .pubs li{grid-template-columns:1fr;gap:4px}
+  .pubs .yr:empty{display:none}
+  .pubs.mit-cover li,.pubs.mit-cover.ohne-jahr li{grid-template-columns:3.75rem minmax(0,1fr);column-gap:16px}
+  .pubs.mit-cover .yr{grid-column:1/-1}
+  .pubs .ti{font-size:22px}
   .posts a{grid-template-columns:4.75rem minmax(0,1fr);column-gap:16px;padding-block:20px}
   .posts .txt{gap:4px}
   .posts .pt{font-size:23px}

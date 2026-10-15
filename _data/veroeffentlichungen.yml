@@ -1,20 +1,81 @@
 # Veröffentlichungen in Magazinen.
-# Felder: magazin (Pflicht), jahr, ausgabe, inhalt, link (alle optional)
-# Sortierung: Einträge mit Jahr zuerst, neueste oben. Einträge ohne Jahr folgen in der
-# Reihenfolge dieser Datei.
-# Jahr ohne Anführungszeichen schreiben (jahr: 2024). Fehlt eine Angabe, die Zeile weglassen.
 #
-# Vorläufig nur die Magazinnamen. Jahr, Ausgabe und Inhalt folgen.
+# Felder:
+#   magazin   Pflicht. Name des Magazins.
+#   jahr      Jahr der Ausgabe, ohne Anführungszeichen (jahr: 2020).
+#   ausgabe   z. B. "Ausgabe IV/2020" oder "Ausgabe 7, Sommer 2020".
+#   titel     Titel des Beitrags. Steht groß in der Liste. Ohne Titel steht dort der Magazinname.
+#   sprache   en, wenn der Titel englisch ist (für Silbentrennung und Screenreader).
+#   inhalt    kurze Ergänzung, z. B. "Serie Japan, 8 Bilder".
+#   serie     Ordnername einer Serie (z. B. island). Darunter erscheint „Zur Serie …“.
+#   link      Adresse eines Online-Artikels. Der Titel wird dann zum Link.
+#   cover     Foto der Titelseite: Dateiname ohne Endung, die Datei liegt in
+#             assets/images/veroeffentlichungen/ (z. B. cover: photoklassik-2020-4).
+#             Hochformat, etwa 600 px breit, sRGB. Sobald ein Eintrag ein Cover hat, bekommt die
+#             Liste eine schmale Spalte dafür. Einträge ohne Cover lassen sie frei.
+# Alle Felder außer magazin sind optional. Fehlt eine Angabe, die Zeile weglassen.
+#
+# Sortierung: nach Jahr, neueste oben. Das Jahr steht nur beim ersten Eintrag eines Jahres.
+# Innerhalb eines Jahres gilt die Reihenfolge dieser Datei, also das neueste Heft zuerst.
+# Einträge ohne Jahr stehen am Ende.
 
-- magazin: "PhotoKlassik"
+# ---------- 2024 ----------
+- jahr: 2024
+  magazin: "PhotoKlassik"
+  ausgabe: "Ausgabe III/2024"
+  titel: "Die analoge Fotografie im Zeitalter der KI – Fluch oder Segen?"
 
-- magazin: "Schwarzweiss"
+# ---------- 2023 ----------
+- jahr: 2023
+  magazin: "PhotoKlassik"
+  ausgabe: "Ausgabe IV/2023"
+  titel: "Alle auf einen Blick – Kontaktbögen"
 
-- magazin: "SilvergrainClassics"
+- jahr: 2023
+  magazin: "Schwarzweiss"
+  ausgabe: "Ausgabe 153, April/Mai 2023"
+  titel: "Wenn das Licht schwindet – Nachtfotografie und die Faszination der Entschleunigung"
+  serie: japan
 
-# Beispiel für einen vollständigen Eintrag:
-# - jahr: 2026
-#   magazin: "Name des Magazins"
-#   ausgabe: "Ausgabe 4/2026"
-#   inhalt: "Serie Japan, 8 Bilder"
-#   link: "https://…"
+# ---------- 2020 ----------
+- jahr: 2020
+  magazin: "PhotoKlassik"
+  ausgabe: "Ausgabe IV/2020"
+  titel: "Die Holga oder der Gipfel der analogen Fotografie"
+
+- jahr: 2020
+  magazin: "PhotoKlassik"
+  ausgabe: "Ausgabe III/2020"
+  titel: "Das Erbe der Analog-Ära"
+
+- jahr: 2020
+  magazin: "SilvergrainClassics"
+  ausgabe: "Ausgabe 7, Sommer 2020"
+  titel: "Twilight is the black and white photographer’s best friend"
+  sprache: en
+
+- jahr: 2020
+  magazin: "SilvergrainClassics"
+  ausgabe: "Ausgabe 6, Frühjahr 2020"
+  titel: "The Rolleiflex: How Gear might actually improve your photography"
+  sprache: en
+
+# ---------- 2019 ----------
+- jahr: 2019
+  magazin: "Schwarzweiss"
+  ausgabe: "Ausgabe 132, Oktober/November 2019"
+  titel: "Surreale Landschaft – Infrarotfotografie auf Film"
+  serie: infrarot
+
+- jahr: 2019
+  magazin: "PhotoKlassik International"
+  ausgabe: "Ausgabe III/2019"
+  titel: "A Road Trip around Iceland"
+  sprache: en
+  serie: island
+
+- jahr: 2019
+  magazin: "PhotoKlassik International"
+  ausgabe: "Ausgabe II/2019"
+  titel: "A case for new lenses on old cameras"
+  sprache: en
