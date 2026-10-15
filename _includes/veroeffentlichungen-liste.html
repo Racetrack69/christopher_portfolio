@@ -4,6 +4,7 @@
   Das Jahr steht nur beim ersten Eintrag eines Jahres. Einträge ohne Jahr folgen am Ende.
   Hat kein Eintrag ein Jahr, entfällt die Jahresspalte; hat ein Eintrag ein Cover,
   kommt eine Spalte für die Titelseiten dazu. Leere Angaben werden nicht angezeigt.
+  Links auf fremde Seiten öffnen in einem neuen Fenster (mit Hinweis für Screenreader).
 {%- endcomment -%}
 {%- assign daten = include.daten -%}
 {%- assign mit_jahr = daten | where_exp: "v", "v.jahr != nil" -%}
@@ -40,13 +41,13 @@
     <span class="pub-cover">{% if v.cover %}<img src="{{ '/assets/images/veroeffentlichungen/' | append: v.cover | append: '.jpg' | relative_url }}" alt="Titelseite {{ v.magazin | escape }}{% if ausgabe != '' %}, {{ ausgabe | escape }}{% endif %}" loading="lazy" decoding="async">{% endif %}</span>
     {%- endif %}
     <div class="pub-txt">
-      <div class="ti"{% if v.sprache %} lang="{{ v.sprache }}"{% endif %}>{% if link != "" %}<a href="{{ link }}" rel="noopener">{{ kopf }}</a>{% else %}{{ kopf }}{% endif %}</div>
+      <div class="ti"{% if v.sprache %} lang="{{ v.sprache }}"{% endif %}>{% if link != "" %}<a href="{{ link }}" target="_blank" rel="noopener">{{ kopf }}<span class="vh"> (öffnet in neuem Fenster)</span></a>{% else %}{{ kopf }}{% endif %}</div>
       {%- if det != "" %}
       <div class="det">{{ det }}</div>
       {%- endif %}
       {%- if link != "" or serie %}
       <div class="pub-links">
-        {%- if link != "" %}<a href="{{ link }}" rel="noopener">{% if v.online %}Online lesen{% else %}Zum Heft{% endif %} ↗</a>{% endif -%}
+        {%- if link != "" %}<a href="{{ link }}" target="_blank" rel="noopener">{% if v.online %}Online lesen{% else %}Zum Heft{% endif %} ↗<span class="vh"> (öffnet in neuem Fenster)</span></a>{% endif -%}
         {%- if serie %}<a href="{{ serie.url | relative_url }}">Zur Serie {{ serie.title }} →</a>{% endif -%}
       </div>
       {%- endif %}

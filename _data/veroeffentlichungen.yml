@@ -88,6 +88,13 @@
   sprache: en
   link: "https://shop.silvergrainclassics.com/products/photoklassik-international-issue-3-ii-2019"
 
+# ---------- 2018 ----------
+- jahr: 2018
+  magazin: "PhotoKlassik"
+  ausgabe: "Ausgabe II/2018"
+  titel: "Infrarotfotografie"
+  serie: infrarot
+
 # ========== Online ==========
 
 - online: true
