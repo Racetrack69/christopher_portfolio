@@ -1,0 +1,57 @@
+{%- comment -%}
+  Eine Liste von Veröffentlichungen. Parameter: daten (Einträge aus _data/veroeffentlichungen.yml).
+  Nach Jahr gruppiert, neueste oben, innerhalb eines Jahres in der Reihenfolge der Datei.
+  Das Jahr steht nur beim ersten Eintrag eines Jahres. Einträge ohne Jahr folgen am Ende.
+  Hat kein Eintrag ein Jahr, entfällt die Jahresspalte; hat ein Eintrag ein Cover,
+  kommt eine Spalte für die Titelseiten dazu. Leere Angaben werden nicht angezeigt.
+{%- endcomment -%}
+{%- assign daten = include.daten -%}
+{%- assign mit_jahr = daten | where_exp: "v", "v.jahr != nil" -%}
+{%- assign ohne_jahr = daten | where_exp: "v", "v.jahr == nil" -%}
+{%- assign mit_cover = daten | where_exp: "v", "v.cover != nil" -%}
+{%- assign gruppen = mit_jahr | group_by: "jahr" | sort: "name" | reverse -%}
+{%- assign liste = "" | split: "" -%}
+{%- for g in gruppen -%}{%- assign liste = liste | concat: g.items -%}{%- endfor -%}
+{%- assign liste = liste | concat: ohne_jahr -%}
+{%- assign vorher = "" -%}
+<ol class="pubs{% if mit_jahr.size == 0 %} ohne-jahr{% endif %}{% if mit_cover.size > 0 %} mit-cover{% endif %}">
+  {%- for v in liste %}
+  {%- assign link = v.link | strip -%}
+  {%- assign ausgabe = v.ausgabe | strip -%}
+  {%- assign titel = v.titel | strip -%}
+  {%- assign inhalt = v.inhalt | strip -%}
+  {%- assign jahr = v.jahr | append: "" -%}
+  {%- capture kopf -%}{% if titel != "" %}{{ titel }}{% else %}{{ v.magazin }}{% endif %}{%- endcapture -%}
+  {%- capture det -%}
+    {%- if titel != "" %}{{ v.magazin }}{% endif -%}
+    {%- if titel != "" and ausgabe != "" %} · {% endif %}{{ ausgabe -}}
+    {%- if inhalt != "" %}{% if titel != "" or ausgabe != "" %} · {% endif %}{{ inhalt }}{% endif -%}
+  {%- endcapture -%}
+  {%- assign serie = nil -%}
+  {%- if v.serie -%}
+    {%- assign serie_url = "/serien/" | append: v.serie | append: "/" -%}
+    {%- assign serie = site.serien | where: "url", serie_url | first -%}
+  {%- endif %}
+  <li>
+    {%- if mit_jahr.size > 0 %}
+    <span class="yr">{% if jahr != vorher %}{{ jahr }}{% endif %}</span>
+    {%- endif %}
+    {%- if mit_cover.size > 0 %}
+    <span class="pub-cover">{% if v.cover %}<img src="{{ '/assets/images/veroeffentlichungen/' | append: v.cover | append: '.jpg' | relative_url }}" alt="Titelseite {{ v.magazin | escape }}{% if ausgabe != '' %}, {{ ausgabe | escape }}{% endif %}" loading="lazy" decoding="async">{% endif %}</span>
+    {%- endif %}
+    <div class="pub-txt">
+      <div class="ti"{% if v.sprache %} lang="{{ v.sprache }}"{% endif %}>{% if link != "" %}<a href="{{ link }}" rel="noopener">{{ kopf }}</a>{% else %}{{ kopf }}{% endif %}</div>
+      {%- if det != "" %}
+      <div class="det">{{ det }}</div>
+      {%- endif %}
+      {%- if link != "" or serie %}
+      <div class="pub-links">
+        {%- if link != "" %}<a href="{{ link }}" rel="noopener">Online lesen ↗</a>{% endif -%}
+        {%- if serie %}<a href="{{ serie.url | relative_url }}">Zur Serie {{ serie.title }} →</a>{% endif -%}
+      </div>
+      {%- endif %}
+    </div>
+  </li>
+  {%- assign vorher = jahr -%}
+  {%- endfor %}
+</ol>

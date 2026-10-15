@@ -1,14 +1,15 @@
-# Veröffentlichungen in Magazinen.
+# Veröffentlichungen in Magazinen und online.
 #
 # Felder:
-#   magazin   Pflicht. Name des Magazins.
+#   magazin   Pflicht. Name des Magazins bzw. der Website.
+#   online    true für Beiträge auf Websites. Sie stehen im eigenen Abschnitt „Online“.
 #   jahr      Jahr der Ausgabe, ohne Anführungszeichen (jahr: 2020).
-#   ausgabe   z. B. "Ausgabe IV/2020" oder "Ausgabe 7, Sommer 2020".
+#   ausgabe   z. B. "Ausgabe IV/2020" oder "Ausgabe 7, Sommer 2020", online das Datum.
 #   titel     Titel des Beitrags. Steht groß in der Liste. Ohne Titel steht dort der Magazinname.
 #   sprache   en, wenn der Titel englisch ist (für Silbentrennung und Screenreader).
 #   inhalt    kurze Ergänzung, z. B. "Serie Japan, 8 Bilder".
 #   serie     Ordnername einer Serie (z. B. island). Darunter erscheint „Zur Serie …“.
-#   link      Adresse eines Online-Artikels. Der Titel wird dann zum Link.
+#   link      Adresse des Beitrags im Netz. Der Titel wird zum Link, darunter steht „Online lesen ↗“.
 #   cover     Foto der Titelseite: Dateiname ohne Endung, die Datei liegt in
 #             assets/images/veroeffentlichungen/ (z. B. cover: photoklassik-2020-4).
 #             Hochformat, etwa 600 px breit, sRGB. Sobald ein Eintrag ein Cover hat, bekommt die
@@ -79,3 +80,39 @@
   ausgabe: "Ausgabe II/2019"
   titel: "A case for new lenses on old cameras"
   sprache: en
+
+# ========== Online ==========
+
+- online: true
+  jahr: 2022
+  magazin: "APHOG"
+  ausgabe: "3. September 2022"
+  titel: "Mallorca Summer"
+  sprache: en
+  link: "https://www.aphog.com/mallorca-summer-von-christopher-schmidtke/"
+
+- online: true
+  jahr: 2020
+  magazin: "Ilford Photo"
+  ausgabe: "7. Juli 2020"
+  titel: "How I got this picture"
+  sprache: en
+  inhalt: "Fanal, Madeira"
+  serie: madeira
+  link: "https://www.ilfordphoto.com/i-got-picture-chris-schmidtke/"
+
+- online: true
+  jahr: 2020
+  magazin: "APHOG"
+  ausgabe: "15. April 2020"
+  titel: "Bilderserie Madeira"
+  serie: madeira
+  link: "https://www.aphog.com/bilderserie-madeira-von-christopher-schmidtke/"
+
+- online: true
+  jahr: 2019
+  magazin: "APHOG"
+  ausgabe: "10. November 2019"
+  titel: "Infrarot-Fotografie auf Film"
+  serie: infrarot
+  link: "https://www.aphog.com/infrarotfotografie-auf-film-von-christopher-schmidtke/"

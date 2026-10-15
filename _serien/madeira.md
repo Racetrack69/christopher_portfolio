@@ -13,7 +13,7 @@ bilder:
     h: 1000
     ort: "Fanal"
     jahr: ""
-    kamera: "Rolleiflex 2.8C"
+    kamera: "Rolleiflex 3.5E"
     film: "Ilford HP5 Plus"
     alt: "Ein knorriger, bemooster Stamm wölbt sich im Vordergrund in einem großen Bogen nach rechts, links steht ein kleiner, krumm gewachsener Baum im dichten Nebel bei Fanal auf Madeira."
   - datei: madeira-baeume-geneigt
@@ -22,7 +22,7 @@ bilder:
     h: 1000
     ort: "Fanal"
     jahr: ""
-    kamera: "Rolleiflex 2.8C"
+    kamera: "Rolleiflex 3.5E"
     film: "Ilford HP5 Plus"
     alt: "Mehrere alte Bäume mit schräg wachsenden Stämmen und weit verzweigten Ästen im Nebel, rechts biegt sich ein dicker, bemooster Stamm aus dem Bild."
   - datei: madeira-zwei-baeume
@@ -31,7 +31,7 @@ bilder:
     h: 1000
     ort: "Fanal"
     jahr: ""
-    kamera: "Rolleiflex 2.8C"
+    kamera: "Rolleiflex 3.5E"
     film: "Ilford HP5 Plus"
     alt: "Zwei alte Bäume, deren Stämme sich zueinander neigen und deren Äste sich im Nebel ineinander verflechten."
   - datei: madeira-strasse-kurve
@@ -40,7 +40,7 @@ bilder:
     h: 1000
     ort: ""
     jahr: ""
-    kamera: ""
+    kamera: "Rolleiflex 3.5E"
     film: ""
     alt: "Eine schmale Straße mit unterbrochener Mittellinie macht im Nebel eine Kurve, daneben Holzmasten mit Leitungen und rechts dunkles Gebüsch."
   - datei: madeira-strasse-nass
@@ -49,7 +49,7 @@ bilder:
     h: 1000
     ort: ""
     jahr: ""
-    kamera: ""
+    kamera: "Rolleiflex 3.5E"
     film: ""
     alt: "Eine nasse, glänzende Straße führt geradeaus in den Nebel, rechts eine dicht bewachsene Böschung, links Büsche und Masten."
   - datei: madeira-strasse-serpentine
@@ -58,7 +58,7 @@ bilder:
     h: 1000
     ort: ""
     jahr: ""
-    kamera: ""
+    kamera: "Rolleiflex 3.5E"
     film: ""
     alt: "Eine kurvige Straße mit durchgezogener Mittellinie windet sich zwischen dunklen Bäumen und einer bewachsenen Böschung."
   - datei: madeira-baum-hang
@@ -67,7 +67,7 @@ bilder:
     h: 1000
     ort: "Fanal"
     jahr: ""
-    kamera: "Rolleiflex 2.8C"
+    kamera: "Rolleiflex 3.5E"
     film: "Ilford HP5 Plus"
     alt: "Ein großer Baum mit mächtigem Stamm und weit ausgreifenden Ästen an einem moosigen Hang, dahinter weitere Bäume, die im Nebel verblassen."
   - datei: madeira-baum-kreuz
@@ -76,7 +76,7 @@ bilder:
     h: 1000
     ort: "Fanal"
     jahr: ""
-    kamera: "Rolleiflex 2.8C"
+    kamera: "Rolleiflex 3.5E"
     film: "Ilford HP5 Plus"
     alt: "Ein Baum mit zwei sich kreuzenden Stämmen, die unten einen Bogen bilden, links im Nebel ein kleinerer, schief gewachsener Baum."
   - datei: madeira-stamm-farne
@@ -85,7 +85,7 @@ bilder:
     h: 1000
     ort: "Fanal"
     jahr: ""
-    kamera: "Rolleiflex 2.8C"
+    kamera: "Rolleiflex 3.5E"
     film: "Ilford HP5 Plus"
     alt: "Ein dicker, knorriger Stamm voller Moos und kleiner Farne im Vordergrund, dahinter die verdrehten Stämme weiterer Bäume im Nebel."
 ---

@@ -157,8 +157,12 @@ html.js a.frame:hover img.loaded,html.js .cover-link:hover img.loaded{opacity:.9
 .pubs .ti a{text-decoration:none}
 .pubs .ti a:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
 .pubs .det{margin-top:6px;font-size:15px;line-height:1.5;color:var(--ink-2)}
-.pubs .pub-serie{display:inline-block;margin-top:6px;font-size:14px;color:var(--quiet);text-decoration:none;transition:color .2s}
-.pubs .pub-serie:hover{color:var(--ink)}
+.pubs .pub-links{display:flex;flex-wrap:wrap;column-gap:20px;row-gap:2px;margin-top:6px}
+.pubs .pub-links a{font-size:14px;color:var(--quiet);text-decoration:none;transition:color .2s}
+.pubs .pub-links a:hover{color:var(--ink)}
+/* Zwischenüberschriften „In Magazinen“ und „Online“ (nur wenn es beide gibt) */
+.pubs-h{margin-top:clamp(40px,5vw,72px)}
+.pubs-h + .pubs{margin-top:14px}
 /* Titelseiten: eigene Spalte, sobald ein Eintrag ein Cover hat */
 .pubs.mit-cover li{grid-template-columns:5.5rem 4.5rem minmax(0,1fr)}
 .pubs.mit-cover.ohne-jahr li{grid-template-columns:4.5rem minmax(0,1fr)}
