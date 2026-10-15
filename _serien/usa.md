@@ -2,10 +2,10 @@
 title: USA
 kurz: "Wüste, Joshua Trees und die Alabama Hills"          # eine Zeile unter dem Titel auf der Startseite
 reihenfolge: 3
-description: "Schwarzweißfotografie auf Film von Christopher Schmidtke. Dünen, Joshua Trees, eine Tankstelle in der Wüste und die Granitfelsen der Alabama Hills."
+description: "Schwarzweißfotografie auf Film von Christopher Schmidtke. Dünen, Joshua Trees, das Death Valley, eine Tankstelle, eine Straße voller Risse und die Granitfelsen der Alabama Hills."
 zeitraum: ""            # z. B. 2022
 titelbild: 3            # der Joshua Tree
-reihen: [1, 2, 2, 2, 2] # Dünenpanorama, zwei Quadrate, Tankstelle und Schlucht, dann zweimal Felsen und Wege
+reihen: [1, 2, 1, 2, 2, 2, 1] # Dünenpanorama, zwei Quadrate, Death Valley, Tankstelle und Schlucht, Straße und Schotterweg (Kleinbildstreifen), Felsen, zum Schluss der gerade Weg
 bilder:
   - datei: usa-duenen-panorama
     format: kb
@@ -34,6 +34,15 @@ bilder:
     kamera: ""
     film: "Ilford FP4 Plus"
     alt: "Ein einzelner Joshua Tree im Joshua Tree National Park mit stacheligen Blattbüscheln an verzweigten Ästen, dahinter ein flacher, steiniger Hügel und ein Himmel voller fein gezogener Schleierwolken. Um das Bild der schwarze Filmrand."
+  - datei: usa-badlands
+    format: 6x9
+    w: 1080
+    h: 720
+    ort: "Death Valley"
+    jahr: ""
+    kamera: "Zeiss Ikon"
+    film: "Ilford HP5 Plus"
+    alt: "Blick über ein Gewirr aus kahlen, tief gefurchten Erosionsrücken im Death Valley, die Grate im Licht, die Rinnen dazwischen im Schatten, dahinter dunklere Bergketten unter einem hellen Himmel. Um das Bild der schwarze Filmrand mit Aufdruck."
   - datei: usa-tankstelle
     format: kb
     w: 1600
@@ -52,15 +61,24 @@ bilder:
     kamera: ""
     film: ""
     alt: "Blick nach oben in eine enge Schlucht zwischen zerklüfteten Felswänden, aus der zwei hohe, schlanke Nadelbäume zum hellen Himmel wachsen. Am Rand die Perforation des Kleinbildfilms."
+  - datei: usa-strasse-risse
+    format: kb
+    w: 1080
+    h: 864
+    ort: "Kalifornien"
+    jahr: ""
+    kamera: "Minolta XD-7"
+    film: "Ilford HP5 Plus"
+    alt: "Eine schnurgerade Straße mit Mittellinie führt in Kalifornien durch die Wüste auf eine Bergkette zu, der Asphalt ist von dunklen, geflickten Rissen durchzogen, am Rand niedrige Büsche und eine helle Ebene. Um das Bild der Kleinbildfilm mit Perforation und Aufdruck, links und rechts angeschnitten die Nachbarbilder."
   - datei: usa-schotterweg-felsen
     format: kb
-    w: 1600
-    h: 1130
+    w: 1080
+    h: 1080
     ort: "Alabama Hills"
     jahr: ""
-    kamera: ""
-    film: ""
-    alt: "Ein Schotterweg windet sich in den Alabama Hills zwischen großen, rund verwitterten Granitfelsen hindurch, im Hintergrund schneebedeckte, zerklüftete Berge."
+    kamera: "Minolta XD-7"
+    film: "Ilford HP5 Plus"
+    alt: "Ein Schotterweg windet sich in den Alabama Hills zwischen großen, rund verwitterten Granitfelsen hindurch, im Hintergrund schneebedeckte, zerklüftete Berge. Um das Bild der Kleinbildfilm mit Perforation und Aufdruck."
   - datei: usa-felsnadel
     format: kb
     w: 1600
