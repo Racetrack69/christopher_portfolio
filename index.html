@@ -2,8 +2,36 @@
 layout: default
 ---
 {%- assign serien = site.serien | sort: "reihenfolge" -%}
+{%- comment -%}
+  Breiteste Reihe der Bilderwand (Summe der Seitenverhältnisse, getrennt für Reihen mit zwei
+  und mit einem Bild). Text und Journal bekommen dieselbe Breite, damit alles an einer Kante steht.
+{%- endcomment -%}
+{%- assign s2 = 0 -%}
+{%- assign s1 = 0 -%}
+{%- for s in serien -%}
+  {%- assign m = forloop.index0 | modulo: 2 -%}
+  {%- if m == 0 -%}
+    {%- assign ti = s.titelbild | default: 1 | minus: 1 -%}
+    {%- assign ta = s.bilder[ti] -%}
+    {%- assign rs = ta.w | times: 1.0 | divided_by: ta.h -%}
+    {%- assign naechste = serien[forloop.index] -%}
+    {%- if naechste -%}
+      {%- assign tj = naechste.titelbild | default: 1 | minus: 1 -%}
+      {%- assign tn = naechste.bilder[tj] -%}
+      {%- assign rb = tn.w | times: 1.0 | divided_by: tn.h -%}
+      {%- assign rs = rs | plus: rb -%}
+      {%- if rs > s2 -%}{%- assign s2 = rs -%}{%- endif -%}
+    {%- else -%}
+      {%- if rs > s1 -%}{%- assign s1 = rs -%}{%- endif -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor %}
+<div class="home" style="--s2:{{ s2 | round: 4 }};--s1:{{ s1 | round: 4 }}">
 <div class="home-head">
   <p class="intro">{{ site.einleitung }}</p>
+  {%- if site.startseite_veroeffentlicht and site.startseite_veroeffentlicht != "" %}
+  <p class="intro-note"><a href="{{ '/veroeffentlichungen/' | relative_url }}">Veröffentlicht in {{ site.startseite_veroeffentlicht }} →</a></p>
+  {%- endif %}
 </div>
 <div class="wall covers">
 {%- for s in serien -%}
@@ -31,7 +59,10 @@ layout: default
 </div>
 {%- if site.posts.size > 0 %}
 <section class="home-journal" aria-labelledby="hj">
-  <h2 class="mini" id="hj">Aus dem Journal</h2>
+  <div class="hj-kopf">
+    <h2 class="mini" id="hj">Aus dem Journal</h2>
+    <a class="hj-alle" href="{{ '/journal/' | relative_url }}">Alle Beiträge →</a>
+  </div>
   <ul class="posts">
     {%- for post in site.posts limit: 2 %}
     {% include beitrag-eintrag.html post=post %}
@@ -39,3 +70,4 @@ layout: default
   </ul>
 </section>
 {%- endif %}
+</div>

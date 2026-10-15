@@ -9,6 +9,10 @@ description: >-
 # Kleine Zeile unter dem Namen im Kopf (auf allen Seiten). Leer lassen = keine Zeile.
 unterzeile: Analoge Fotografie · Schwarzweiß
 
+# Zeile unter dem Text auf der Startseite, verlinkt auf „Veröffentlichungen“.
+# Daraus wird: „Veröffentlicht in … →“. Leer lassen = keine Zeile.
+startseite_veroeffentlicht: "PhotoKlassik, SilvergrainClassics, Schwarzweiss und bei Ilford Photo"
+
 # Text oben auf der Startseite
 einleitung: >-
   Ich fotografiere auf Film, fast immer in Schwarzweiß und am liebsten im Quadrat.

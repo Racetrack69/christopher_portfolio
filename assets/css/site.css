@@ -76,13 +76,20 @@ a{color:inherit}
 
 /* Wand: Reihen gleicher Höhe, höchstens --rowmax hoch, zentriert */
 .lede{margin:0 0 clamp(28px,4vw,56px);max-width:40rem;font-weight:300;font-size:clamp(17px,1.5vw,19px);line-height:1.6;color:var(--ink-2)}
-/* Startseite: kurzer Text wie eine Tafel am Eingang, ohne eigene Überschrift (die steht im Kopf) */
-.home-head{max-width:36rem;margin:0 0 clamp(48px,6vw,96px)}
+/* Startseite: kurzer Text wie eine Tafel am Eingang, ohne eigene Überschrift (die steht im Kopf).
+   Text, Bilderwand und Journal teilen sich eine Spalte, so breit wie die breiteste Bilderreihe
+   (--s2: Reihe mit zwei Bildern, --s1: Reihe mit einem Bild, Werte aus index.html). */
+.home-head,.home-journal{width:min(100%, max(calc(var(--s2) * var(--rowmax) + var(--gap)), calc(var(--s1) * var(--rowmax))));margin-inline:auto}
+.home-head{margin-bottom:clamp(48px,6vw,96px)}
+.home-head .intro{max-width:36rem}
+.intro-note{max-width:36rem;margin:18px 0 0;font-size:14px;line-height:1.6;color:var(--quiet)}
+.intro-note a{text-decoration:none;transition:color .2s}
+.intro-note a:hover{color:var(--ink)}
 .intro{margin:0;font-weight:300;font-size:clamp(17px,1.4vw,19px);line-height:1.7;color:var(--ink-2);text-wrap:pretty}
 .wall{display:flex;flex-direction:column;gap:var(--row-gap)}
 .wall .row{display:flex;gap:var(--gap);align-items:flex-start;margin-inline:auto;width:min(100%, calc(var(--sum) * var(--rowmax) + (var(--n) - 1) * var(--gap)))}
 .wall .ph{flex:var(--r) 1 0;min-width:0}
-.covers{--rowmax:58vh}
+.home{--rowmax:72vh}  /* Bilderwand der Startseite: höchstens 72 % der Fensterhöhe, füllt so am Desktop meist die volle Breite */
 .ph{margin:0}
 .frame{display:block;position:relative;width:100%;max-width:100%;aspect-ratio:var(--w) / var(--h);background:var(--mat);overflow:hidden}
 .wall--series a.frame{cursor:zoom-in}
@@ -96,7 +103,13 @@ html.js a.frame:hover img.loaded,html.js .cover-link:hover img.loaded{opacity:.9
 .cover .c-title{font-family:var(--serif);font-size:24px;font-weight:500;line-height:1.1;color:var(--ink)}
 .cover-link:hover .c-title{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
 .cover .c-sub{display:block;margin-top:4px;font-size:14px;line-height:1.5;color:var(--quiet)}
-.home-journal{max-width:46rem;margin-top:var(--row-gap)}
+.home-journal{margin-top:var(--row-gap)}
+.hj-kopf{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:4px}
+.hj-kopf .mini{margin:0}
+.hj-alle{font-size:14px;color:var(--quiet);text-decoration:none;transition:color .2s}
+.hj-alle:hover{color:var(--ink)}
+/* Am Desktop stehen die zwei neuesten Beiträge nebeneinander, wie die Bilder darüber */
+@media (min-width:761px){.home-journal .posts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--gap)}}
 .mini{margin:0 0 4px;font-family:var(--sans);font-size:12.5px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--quiet)}
 
 /* Einblenden: nur was beim Laden unterhalb des Bildschirms liegt, einmalig, kurz */
